@@ -1,0 +1,1868 @@
+Q. what is inheritance?
+Inheritance means acquire properties from parent class as well as add new property in child class called as inheritance.
+
+A --- Parent class 
+|
+B --- Child class.
+
+Q. Why use inheritance or what is benefit of inheritance?
+ There are two benefits of inheritance
+  1) Reusability: we can acquire all properties from parent class and use it called as reusability. 
+  2) Extensibility : extensibility means we can acquired properties from parent class and add own new properties in child class called as extensibility.
+
+Q. Why we can reuse class by using inheritance if we can reuse class by creating object?
+If we reuse class by using object then we can reuse class as it is define previously but if we reuse class by using inheritance then we can reuse its content as well as some time we can customize class content in child class as per our need as well as we can use parent content and add some own content also.
+How to perform Inheritance in Java?
+if we want to perform inheritance in java we have extends keyword 
+class A{
+}
+class B extends A{
+}
+if we think about above code we have two classes name as A and B  Here A is parent class and B is child class.
+
+Note: we cannot create any program in java without inheritance.
+Because in java every class has a default parent class name as Object class and it is member of java.lang package and java.lang is a default package of java so not need to import it.
+ 
+
+Q. why java provide Object class as parent to every class?
+_____________________________________________________________________________
+Because Object class has some inbuilt methods those required every class in java 
+int hashCode()
+boolean equals(Object)
+String toString()
+void wait()
+void wait(int)
+void notify()
+void notifyAll()
+void finalize()
+Class getClass()
+Object clone()
+ static{
+}
+Note: in the case of java we not need to create object of parent class we can use parent content by using child class object.
+
+Example: Suppose consider we want to create Area Calculator application for Circle so we can perform two types of calculation with Circle one is Area of Circle and one is Cirm of Circle and for both operation required radius of Circle so here if we want manage this application by using inheritance we can create Circle as parent class and we need to create two more classes as child class one is Area and one is Cirm shown in following diagram.
+
+
+ 
+
+Source code Example
+package org.techhub;
+
+public class Circle {
+   protected float radius;
+	public void setRadius(float radius)
+	{  this.radius=radius;
+	}
+}
+package org.techhub;
+public class Area extends Circle
+  {          public float getArea() {
+		return 3.14f*radius*radius;
+	}
+
+}
+package org.techhub;
+public class Cirm extends Circle {
+    public float getCirm() {
+		return 3.14f*2*radius;
+	}
+}
+package org.techhub;
+public class InheritenceApp {
+	public static void main(String[] args) {
+	    Area a = new Area();
+	    a.setRadius(3.0f);
+	    float result=a.getArea();
+	    System.out.println("Area of circle is "+result);
+	    Cirm cm = new Cirm();
+	    cm.setRadius(4.0f);
+	    result = cm.getCirm();
+	    System.out.println("Cirm of Circle is "+result);	 
+	}
+}
+
+
+Inheritance With constructor
+When we have constructor in parent class and constructor in child class and  if parent class contain default constructor and if we create object of child class then parent constructor get executed before child class constructor.
+Example:
+package org.techhub;
+class A
+{  A(){
+		System.out.println("I am default constructor");
+	}
+}
+class B extends A
+{   B(){
+		System.out.println("I am B coonstructor");
+	}
+}
+public class ConsInheritenceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+	}
+}
+Output:
+I am default constructor
+I am B constructor
+
+Code Description: if we think about above code we have two classes one is A and one is B here A is parent class and B is child class and A class contain default constructor  and B class also contain default constructor and in main class we created object of class B i.e child class but JVM call parent constructor before child class constructor 
+
+Note: when we have parameter in parent class constructor then JVM cannot call parent constructor before child constructor in this case child class constructor has responsibility to pass parameter to parent constructor and for that we have super() constructor.
+super () constructor must be first line of code in child class constructor.
+Example:
+package org.techhub;
+class A
+{  A(int x){
+		System.out.println("I am default constructor");
+	}
+}
+class B extends A
+{   B()
+	{
+		System.out.println("I am B coonstructor");
+	}
+}
+public class ConsInheritenceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+	}
+}
+Code Description: if we think about above code we get compile time error because we have parameter in parent class constructor i.e in class A and we not pass value to parent class constructor from child class using a super() constructor so compiler will generate error.
+So if we want to solve this problem we need to use super() constructor in child class constructor shown in following diagram.
+ 
+
+Note: super () constructor must be first line of code in child class constructor and calling super() constructor is one type of constructor chaining using a inheritance.
+Source code
+package org.techhub;
+class A
+{  A(int x){
+		System.out.println("I am default constructor");
+	}
+}
+class B extends A
+{   B(){ 
+		System.out.println("I am B coonstructor");
+		super(100);
+	}
+}
+public class ConsInheritenceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+	}
+}
+Code Description: above code generate compile time error to us because we use super() constructor in second line in child class constructor.
+
+Q. Can we use super() and this() constructor at same time?
+No we cannot use super() and this() constructor at same time because super() need first line and this() also required first line so it not possible to write  different line of code in single line of statement so it is not possible and if we try to use this() and super() a same time then compiler  will generate compile time error to us shown in following code.
+
+package org.techhub;
+class A
+{  A(int x){
+		System.out.println("I am default constructor");
+	}
+}
+class B extends A
+{   B()
+	{ super(100);
+	  this(5,10);
+		System.out.println("I am B coonstructor");
+		
+	} 
+     B(int x,int y){
+	   
+    }
+}
+public class ConsInheritenceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+	}
+}
+
+Method overriding: Method overriding means if we define method in parent class and redefine method again in child class called as method overriding.
+Example:
+class A
+ {  void show(){
+     System.out.println("I am show in A");
+   }
+}
+class B extends A
+{ void show()
+   { System.out.println("I am show in B");
+   }
+}
+In the case of method overriding if we create object of child class and try to call overridden method then by default child logic get executed.
+package org.techhub;
+class A
+{    void show() {  System.out.println("I am parent method");
+	}
+}
+class B extends A
+{         void show() {
+		System.out.println("I am child method");
+	}
+}
+public class InheritenceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+		b1.show();
+	}
+}
+
+Q. Why use method overriding or what is benefit of method overriding?
+  There are two benefits of method overriding? 
+	1) To customize parent logics in child class as per the requirement 
+	2) To achieve dynamic polymorphism.
+Example: of parent logic customization in child class.
+Suppose consider we want to design application for Result Analysis System and we have one facility in result i.e. grace and some exam types BoardExam, University Exam etc and we want to set maximum 
+Grace marks but grace may be vary from exam to exam then we can manage by using overriding technique so your code look like as
+
+Example:
+package org.techhub;
+
+class GraceMarks {
+	int graceMaxMarks;
+
+	void setGraceMarks() {
+		graceMaxMarks = 40;
+	}
+}
+
+class BoardExam extends GraceMarks {
+	void setGraceMarks() {
+		graceMaxMarks = 30;
+	}
+	void showBoardGrace() {
+		System.out.println("Grace Marks is "+graceMaxMarks);
+	}
+}
+
+class UniversityExam extends GraceMarks {
+	void setGraceMarks() {
+		graceMaxMarks = 10;
+	}
+	void showUniversityGrace() {
+		System.out.println("Grace Marks is "+graceMaxMarks);
+	}
+}
+
+public class GraceApplication {
+
+	public static void main(String[] args) {
+		BoardExam b= new BoardExam();
+		b.setGraceMarks();
+		b.showBoardGrace();
+		UniversityExam ue = new UniversityExam();
+		ue.setGraceMarks();
+		ue.showUniversityGrace();
+	}
+}
+If we want to work with method overriding in OOP we have some important rules.
+
+1) Return type should not be different in method overriding
+Note: - we must be follow signature of parent as it in child class in the case of method overriding.
+class A
+{    void show() {
+		System.out.println("I am show");
+	}
+}
+class B extends A
+{      int show() {
+		 System.out.println("I am show");
+	 }
+}
+if we think about above code we get compile time error because we have  method in class A i.e void show() and int show() in child class so it not possible because we not use same signature of parent method in child class so compiler will generate compile time error to us.
+
+2) If we use same method name in parent class and in child class but with different data type or different parameter list or different parameter sequence so it is consider as method overloading in inheritance not method overriding.
+package org.techhub;
+
+class A
+{
+	void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{
+	 void show(int x) {
+		 System.out.println("I am show in B "+x);
+	 }
+}
+public class GraceApplication {
+
+	public static void main(String[] args) {
+		
+		 A a1 = new A();
+		 a1.show();
+	}
+}
+if we think about above code we have output I am show in A because we have two classes name as A and B in class A we have void show() method and in class B we have void show(int x) so it is consider as overloading not overriding and if we think about main method in main method we create object class A and class method a1.show() means show() method call from class A because as per rule of overriding which method should be executed is depend on how much parameter pass in it ,its sequence and its data type.
+
+
+3) if we define method as public in parent class and if we define method as default , protected or private in child class then compiler will generate compile time error to us 
+class A
+{   public void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{
+	 void show() {
+		 System.out.println("I am show in B ");
+	 }
+}
+public class GraceApplication {
+
+	public static void main(String[] args) {	
+		 A a1 = new A();
+		 a1.show();
+	}
+}
+if we think about above code we get compile time error because we define public void show() in class A and override it as default and public to default , public to protected and public to private overriding is not possible so compiler  will generate error to us.
+
+4) if we define parent class method as protected or default then we can override it as public 
+in child class  default to public is possible , protected to public is also possible.
+
+class A
+{   protected void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{      public void show() {		
+		 System.out.println("I am show in B ");
+	 }
+}
+public class GraceApplication {
+	public static void main(String[] args) {		
+		  B b1 = new B();
+		  b1.show();
+	}
+}
+Note: above code not generate any compile time error to us because we have method in class A as protected and we define method as public in class B so compiler will not generate any problem because protected to public overriding is possible.
+
+5) if we define method as default in parent class then we can override as protected in child class 
+but not vice versa
+class A{   void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{      protected void show() {		
+		 System.out.println("I am show in B ");
+	 }
+}
+public class GraceApplication {
+	public static void main(String[] args) {	
+		  B b1 = new B();
+		  b1.show();
+	}
+}
+above code not generate any compile time error to us because we define method as default in parent class and method as protected it is possible 
+
+class A
+{   protected void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{
+	  void show() {
+		
+		 System.out.println("I am show in B ");
+	 }
+}
+
+public class GraceApplication {
+	public static void main(String[] args) {
+		  B b1 = new B();
+		  b1.show();
+	}
+}
+if we think about above code we get compile time error because we declare parent method as protected and we override it as default it  not possible.
+
+Q. can we override a static method?
+Yes we can override a static but normally static method override for method hiding purpose 
+
+1) In the case of method overriding if we create reference of parent class and object of child class and try to call overridden method then by default child logics get executed.
+class A
+{    void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{
+	 void show() {
+		
+		 System.out.println("I am show in B ");
+	 }
+}
+public class GraceApplication {
+	public static void main(String[] args) {
+		 A a1 = new B();
+		  a1.show();
+	}
+}
+if we think about above code we get output I am show in B means here we have reference of class A and we created object of class B and we call show() method which is override in class B so JVM by default call show() method from class B because it is overriding.
+
+2) In the case of method hiding if we create reference of parent class and object of child class and try to call overridden method then by default parent reference call parent version of method not child version means JVM hide child logics and execute parent logics called as method hiding and for method hiding we need to define method as static and need to override in child class.
+
+package org.techhub;
+class A
+{    static void show() {
+		System.out.println("I am show in A");
+	}
+}
+class B extends A
+{    static void show() {
+		
+		 System.out.println("I am show in B ");
+	 }
+}
+public class GraceApplication {
+	public static void main(String[] args) {
+		 A a1 = new B();
+		  a1.show();
+	}
+}
+above code generate output I am method in A 	because we have static method overriding in main function we create reference of parent class i.e A and object of child class i.e new B() and we call a1.show() means here JVM call parent version so we get output I am method in A 
+
+final keyword
+________________________________________________________________________
+final is non access specifier in java 
+
+Q. what is access specifier: - access specifier is the some keywords which decide accessibility restrictions level on class and its member.
+There are four types of access specifier in java
+	1) private 2) public 3) protected 4) default or package level 
+Q. what is non access specifier: non access specifier are the some keywords which is used for apply usability restriction on class members or class.
+   There are major 8 types of non access specifier in java 
+  1) static 2) final 3) abstract  4) volatile 5) transient 6) strictfp  7) assert  8) synchronized 
+
+final keyword: final keyword can use with variable  , class and function 
+
+final variable: final variable means a variable cannot modify its value means in the case of java when we declare constant values then we can use final
+
+package org.techhub;
+public class FinalVarApplication {
+	public static void main(String[] args) {
+		final int a=10;
+		++a;//compile time error
+		System.out.println("A is "+a);
+	}
+}
+if we think about above code we have variable name as final int a=10;
+++a; it will generate compile time error because we try to modify value of final variable a and it is not allowed.
+
+final method: - final method means a method cannot override in child class.
+Normally we refer final method when parent class wants to restrict child to modify its logic 
+
+
+Q. what is use of final method?
+final method is used for avoid method overriding in java 
+Q. can we inherit final method?
+yes we can inherit final method in child class but without private access specifier 
+if we use private access specifier with final method then we cannot inherit it as well as cannot override.
+
+package org.techhub;
+class RBI{
+	 int irate;
+	void setMaxInterest() {
+		irate=16;
+	}
+	final void accOpeningDoc() {
+		System.out.println("1:Passport size photo 2: Pan And Adhar");
+	}
+}
+class StateLevel extends RBI
+{
+	void setMaxInterest() {
+		irate=8;
+	}
+	void accOpeningDoc() {
+		System.out.println("Need only adhar");
+	}
+}
+public class FinalVarApplication {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}
+if we think about above code we get compile time error because we try to override accOpeningDoc() method from RBI to StateLevel child class and it is not possible.
+
+final class : final class means a class cannot inherit in child class 
+package org.techhub;
+final class RBI{
+	 int irate;
+	void setMaxInterest() {
+		irate=16;
+	}
+	 void accOpeningDoc() {
+		System.out.println("1:Passport size photo 2: Pan And Adhar");
+	}
+}
+class StateLevel extends RBI
+{
+	void setMaxInterest() {
+		irate=8;
+	}
+	void accOpeningDoc() {
+		System.out.println("Need only adhar");
+	}
+}
+public class FinalVarApplication {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}
+above code generate compile time error to us because we try to inherit final class RBI and it is not possible 
+
+Q. why use final class?
+final class normally use for create immutable objects in java 
+immutable means once we create object we cannot modify its value called as immutable 
+Example: java.lang.String is immutable class in java because String is final class means we cannot inherit string class in any another class means we cannot override method of string in any user defined class and customize it so string is immutable class.
+
+Q. can we create object of final class?
+Yes we can use final class by creating object but we cannot use it using inheritance.
+
+Q. can we define final method in final class?
+yes we can define final method in final class but not necessary to define it because if we have class is final so there is no overriding so creating method final in final class is useless.
+
+Q. what is diff between static and final?
+ 1) final variable cannot modify its value but static variable can modify value 
+ 2) final variable can create its separate copy with every object if it is not static but static variable can create only one copy and share commonly in all objects.
+3) static variable load its member before creating object and final variable load its memory after object if it is not static.
+4) static variable stored in Permenant generation section and final stored in object if it not static
+5) final method cannot override but static can override and can achieve method hiding by using a static method 
+
+6) static method allow only static variable but final method can allow static and non static  variables 
+7) we can use final static at same time 
+8) we can use static method by class name and final method by object if it is not static.
+9) we can declare class as final for avoid inheritance but we cannot declare outer class as static if we want to declare class as static then it should be inner class.
+
+Abstract class: - 
+
+Q. what is abstract class and abstract methods?
+ _____________________________________________________________________
+Abstract class means a class cannot create its object and abstract method means a method cannot have logics 
+
+Q. How to declare abstract class in java?
+     ______________________________________________________________________________
+if we want to declare abstract class in java we have abstract keyword.
+Syntax:
+   abstract class classname{
+      abstract returntype functionname(arguments);
+}
+Example: 
+abstract class Vehicle
+{  public abstract void engine();
+}  
+public class VehicleApp
+{  public static void main(String x[])
+    {   Vehicle  v = new Vehicle();
+    }
+}
+if we think about this code we get compile time error  because we try to create object of abstract class and it is not possible 
+
+Q. why use abstract class and abstract methods
+_________________________________________________________________________________
+There are two benefits of abstract class and abstract methods 
+1) To achieve abstraction 
+2) To achieve dynamic polymorphism.
+
+
+Q. what is abstraction:  abstraction means to hide implementation details from end user at designing level means in this case of abstract we not write logic of method in abstract class just we provide its template and we write logic of method in child class called as abstraction.
+
+abstract class Vehicle
+{  public abstract void engine();
+}  
+
+if we think about above code it is implementation of abstraction here we can say every vehicle class engine() but we cannot predict its design and design of the engine() is dependent on vehicle type
+Means Car has different engine design, Bike has different engine design etc 
+So if we want to write a logics of abstract method we need to write in child class means we have to inherit abstract class and override its method and write its logic.
+The benefit is we can write a different logic of every abstract method or abstract class.
+
+abstract class Vehicle
+{  abstract void engine();
+}
+class Bike extends Vehicle
+{  void engine(){
+     System.out.printn("200 CC");
+    }           
+}
+class Car extends Vehicle
+{  void engine(){
+       System.out.println("1000 CC");
+    }
+}
+public class VehicleApplication {
+	public static void main(String[] args) {
+		Bike b = new Bike();
+		  b.engine();
+		Car c = new Car();
+		c.engine();
+	}
+}
+if we want to work with abstract class and abstract methods we have some important rules provided by java to us 
+
+1) if we declare method as abstract then class must be abstract 
+Note: we cannot declare abstract method in non abstract class if we try it then we compile time error.
+
+class Vehicle
+{  abstract void engine();
+}
+if we think about above code it will generate compile time error to us because we have non abstract class name as Vehicle and it contain one abstract method name as abstract void engine() but we cannot declare abstract method under non abstract class so compiler will generate compile time error.
+
+2) We cannot create object of abstract class 
+  Q. why we cannot create object of abstract class?
+because in abstract class contain abstract method and abstract method cannot have logic or definition in abstract class but if OOP allow us to create object of abstract class then there is possibility using that object we can try to call abstract method and abstract method cannot have logic but if we want to call any method then it must have logic or definition so abstract method and function calling rules are opposite of each other so avoiding this problem OOP not allow to create object of abstract class.
+
+3) Cannot declare abstract method as final 
+because abstract must be override in child class and final cannot override in child class so compiler will generate compile time error if we try to declare abstract method as final
+
+Example:
+abstract class Vehicle
+{  final abstract void engine();
+}
+Compiler will generate compile time error to us because we try to declare abstract method as final.
+
+4) We cannot declare abstract method as static
+ Q. why we cannot declare abstract method as static?
+    There are two reasons we cannot declare abstract method as static
+	1) static method work with compile time polymorphism and abstract method work with dynamic polymorphism not compile time so the behavior of static and abstract opposite of each other so we cannot declare static method as final.
+	2) static method allocate memory before creating object by class loader but for allocation of memory method must have definition or logic and abstract method cannot have logic or definition so we cannot declare static method as abstract
+ abstract class Vehicle
+{  static abstract void engine();
+}
+Compiler will generate compile time error to us because we try to declare abstract method as static.
+
+5) We cannot declare abstract method as private
+the reason private cannot support to inheritance as well as overriding and abstract cannot work without overriding and inheritance so private and abstract has opposite behavior so we cannot declare abstract method as static.
+
+abstract class Vehicle
+{  private abstract void engine();
+}
+above code will generate compile time error to us because we try to declare abstract method as private.
+
+6) Can we declare non abstract method in abstract class?
+Yes we can declare non abstract method in abstract class and if we declare non abstract method in abstract class as well as some abstract in abstract class then class consider as concrete class 
+abstract class Vehicle
+{
+	abstract void engine();
+	void color() {
+		System.out.println("white");
+	}
+}
+if we think about above code we have two types of method in Vehicle class name as engine() and color() here engine() is abstract method and color is non abstract method means Vehicle is combination of abstract and non abstract method so we can say it is concrete class.
+
+7) if abstract class contain more than one abstract methods then all method must be override in child class where abstract class get inherit.
+Note: if we not required some methods then we must be override as blank methods in child class shown in following code.
+package org.techhub;
+abstract class A
+{   abstract void s1();
+	abstract void s2();
+	abstract void s3();
+}
+class B extends A
+{
+	void s1() {
+		System.out.println("I required s1");
+	}
+}
+class C extends A{
+	void s2() {
+		System.out.println("I required s2");
+	}
+}
+public class AbsApplication {
+	public static void main(String[] args) {
+	
+	}
+}
+above code will generate compile time error to us because we have abstract class A with three abstract methods s1,s2 and s3 and we override s1() in class B and s2 in class B but rules is we need to override all abstract method and we not override s2 and s3() in class A and s1 and s3 in class C so compiler will generate compile time error to us 
+
+if we want to solve this problem we have two ways 
+	1) override all abstract method as blank method 
+package org.techhub;
+abstract class A
+{   abstract void s1();
+	abstract void s2();
+	abstract void s3();
+}
+class B extends A
+{               void s1() {
+		System.out.println("I required s1");
+	}
+	void s2() {	
+	}
+	void s3() {
+	}
+}
+class C extends A{
+	void s2() {
+		System.out.println("I required s2");
+	}
+	void s1() {
+	}
+	void s3() {
+	}
+}
+public class AbsApplication {
+	public static void main(String[] args) {
+	}
+}
+but above solution is not feasible in real time we have one more option name as adapter class.
+
+2) Use adapter class: 
+  Q.what is adapter class?
+adapter class is a intermediator class which contain all blank method of abstract class and which is able to provide specific method to its child class called as adapter class.
+
+abstract class A
+{ abstract void s1();
+    abstract void s2();
+    abstract void s3();
+}
+class ADP extends A
+{  void s1(){
+    }
+   void s2(){
+    }
+   void s3(){
+   }
+}
+class B extends ADP
+{
+   void s1(){
+     System.out.println("I required s1");
+    }
+}
+class C extends ADP
+{
+   void s2(){
+    System.out.println("I Required s2");
+    }
+}
+public class ADPAPP
+{  public static void main(String x[])
+   {
+      B b1 = new B();
+         b1.s1();
+      C c1 = new C();
+      c1.s2();
+   }
+}
+
+8) We cannot create object of abstract class but can create its reference.
+__________________________________________________________________________________
+so if we want  to create reference of abstract class we have to create object of its child class
+Syntax: abstract classname ref = new childclassname();
+Note: when we create reference of abstract class using that reference we can call only those method present in abstract class or parent class and may be override in child class using abstract class reference we cannot call any original method of child class.
+
+abstract class A
+{   abstract void show();
+}
+class B extends A
+{
+	public void show(){
+	  System.out.println("I am show in B");
+	}
+}
+public class ABAPP
+{   public static void main(String x[])
+    {     A a1 = new B();
+         a1.show();
+    }
+}
+if we think about above code we have statement  A a1 = new B(); here we have reference of abstract class A and object of its child class name as B and we  have statement a1.show() this statement can call show() method from class B which we override from class A.
+Output: I am show in B 
+Q. what will be output of given code?
+abstract class A
+{   abstract void show();
+}
+class B extends A
+  {public void show(){
+	  System.out.println("I am show in B");
+	}
+   public void display()
+   {  System.out.println("I am original method of B");
+   }
+}
+public class ABAPP
+{   public static void main(String x[])
+    {		A a1 = new B();
+			a1.show();
+			a1.display();
+    }
+}
+if we think about above code we get compile time error because we have display() method from class B and we have statement a1.display() means we try to call display() method using a parent class reference and we cannot call child original methods using parent class reference so compiler will generate compile time error to us.
+
+Q. why we need create reference of abstract class or parent class?
+The major goal of parent class reference or abstract class reference is to achieve dynamic polymorphism and loose coupling .
+
+Q. what is dynamic polymorphism?
+_______________________________________
+dynamic polymorphism means if object bounded with functionality at program run time called as dynamic polymorphism means we can say in the case of dynamic polymorphism we create reference of parent class and we can create object of its child class and we change child object at run with parent reference and call method using parent reference whose object address stored in it.
+the major benefit of this approach is we can call same method with different logic from different child class using single reference of parent class called as dynamic polymorphism.
+
+Example:
+ 
+if we think about above diagram we have statement Value v; here we have reference of parent class and  we have statement v = new Add(); here we create object of child class name as Add and we store its address or reference in variable v means current reference variable points to 10000 address location i.e points of add class object and we have statement v.setValue(5,4) means we call object using a parent class reference and store 5 and 4 value in object and we have statement v.getResult() means we call getResult() function from Add class and this function return addition of two values and again we have statement v = new Mul(); means here we create object Mul class and store its address in reference v i.e20000  means our reference variable v release the previous address of object i.e 10000 and points to new object i.e 20000 which is object of Mul class and again we have statement v.setValue(10,20) means we store 10 and 20 values on address location 20000 and again we have statemetn v.getResult() means  we call getResult() from Mul class 
+if we think about above overall discuss we change two object at run time with reference variable v and we call two different getResult() method using reference variable v with a two different logics  first time v.getResult() return addition and second time v.getResult() return multiplication means we have same name method with two different logics indicate polymorphism but we decide which method should call at run time by using parent reference whose address stored in parent reference so we can say it is dynamic polymorphism means we call same method with different logic  but at run time called as dynamic polymorphism
+
+Q. what is coupling:  coupling means if one object is dependent on another object called as coupling?
+ There are two types of coupling
+	a) Tight coupling: if particular method or constructor is 100% dependent on particular class object called as tight coupling 
+	b) Loose Coupling:  if particular method or constructor is not 100% dependent on particular class object called as loose coupling.
+
+Example of tight coupling
+Suppose consider we have three classes name as Add,Mul   and Calculator and class structure given below.
+Add class:
+	1) void setValue(int x,int y)
+	2) int getAdd()
+Calculator class
+	1) void performCalculation(Add ad):
+So your code look like as 
+
+ 
+if we think about above code we get compile time error because if we think about main method we created object of Calculator c = new Calculator() and again we created object of Add ad = new Add();
+and we have statement ad.setValue(10,20); means we store data in Add object and again we have statement c.performOperation(ad) means we pass add class reference in performOperation() so it is acceptable but we have statement Mul m = new Mul(); and we have statement m.setValue(5,4) and we have again one more statement c.performOperation(m) so this statement generate compile time error because performOperation() method accept only object of Add class but we try to pass object of Mul class and it is not allowed so we can say performOperation method is 100% dependent on Add class object so it is called as tight coupling.
+
+So if we want to solve this problem we have two ways 
+	1) Use Compile time polymorphism technique : means here we can solve above problem by using method overloading means if we think about above diagram we can defined two methods with same name performOperation() in class Calculator and in one method we can Add object and in one method we can pass Mul object.
+class Calculator
+{  void performOperation(Add ad)
+    {
+   }
+   void performOperation(Mul m)
+    {
+    }
+}
+//calculator 200 
+but if we think about compile time polymorphism or overloading then  it is not feasible in real life means if we have 100 operation in Calculator so we need to overload performOperation() method 100 times or need to write 100 different methods but it is not possible in real time so we want to single method which accept parameter of  reference of multiple classes in this case dynamic polymorphism and loose coupling comes in picture.
+
+	2) Use Dynamic polymorphism with loose coupling.
+If we want achieve loose coupling we need to declare abstract class with abstract method and we need to pass abstract class reference as parameter so the benefit is abstract class is always parent of another classes and if we pass reference of parent class in method we can pass reference of any child class.
+Show in following example
+Example: we want to declare abstract class name as Value with one abstract method name as getResult() and we have two child class of abstract class name as Add and Mul and we override getResult() method in Add and class Mul and write its different logic and again we have one more class name as Calculator which contain performOperation(Value v) method and we pass reference of Value class in it so the benefit is we can pass here add class object as well as  Mul class object in single method means this method is not dependent on particular object called as loose coupling.
+
+ 
+if we think about above diagram we have abstract class name as Value with abstract method name int getResult() and we override this method in Add and Mul class with a different logics 
+and we have class name as Calculator with method performOperation(Value v) and if we think about main method class we created object of Calculator c = new Calculator() and we have statement Value v = new Add() here we created object of class Add and we store its reference or pointer in v and we have statement v.setvalue(10,20) this value stored variable a and b which is present in Add class object and again we have statement c.performOperation(v) means here we pass reference of class Add to Calculator class and we have again statement v.getResult() then we get add class object because Value v points to add class object and we have one more statement v = new Mul() here v release address of class Add and points to class Mul object which 2000 in our application again we have statement c.performOperation(v) here we pass reference of object mul in class Calculator means here v points to class Mul means using performOperation() we use mul object means single method can work with multiple object at run time called as dynamic polymorphims or loose coupling.
+
+Source code
+package org.techhub;
+public abstract class Value {
+    int a,b;
+	  void setValue(int x,int y) {
+		  a=x;
+		  b=y;
+	  }
+	  abstract int getResult();
+}
+package org.techhub;
+public class Add extends Value{
+	 public int getResult() {
+		 return a+b;
+	 }
+}
+package org.techhub;
+public class Mul extends Value {
+	@Override
+	int getResult() {
+		// TODO Auto-generated method stub
+		return a*b;
+	}
+}
+package org.techhub;
+public class Calculator {
+	void performOperation(Value v) {
+		int result =v.getResult();
+		System.out.println("Result is "+result);
+	}
+}
+package org.techhub;
+public class LooseCouplingApplication {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calculator c = new Calculator();
+		Value v = new Add();
+		v.setValue(10, 20);
+		c.performOperation(v);
+		  v = new Mul();
+		v.setValue(5,4);
+		c.performOperation(v);
+	}
+}
+
+Interface : interface is a same like as abstract class 
+
+Q. Why use interface if we have already abstract class?
+ _________________________________________________________________________
+There are major three reasons to use interface 
+	1) To achieve 100% abstraction: if we use interface then by default every method of interface is abstract means we can say interface use by default abstraction.
+	2) To Achieve Dynamic Polymorphism
+	3) To achieve multiple inheritance using java
+
+
+Q. Why java not uses classes for achieve multiple inheritances?
+Because of diamond problem 
+
+Q. what is diamond problem?
+diamond problem means in multiple inheritance there is more than one parent class and single child class so there is possibility in different parent class may be contain same name method and if we create object of child class and try to call the method whose name same in different parent then compiler will get confused and generate compile time error called as diamond problem.
+ 
+
+if we think about above diagram we have diamond problem because we have three classes name as A,B and C and we have  one child class name as D and all parent contain show() method which is duplicated in class D when we create object of class D and try to call show() method then compiler will generate compile time error 
+
+If we want to work with interface we have some important rules or points
+
+if we want to use interface we have interface keyword  shown in following code.
+ 
+Syntax: interface interfacename
+              {
+             }
+
+1) Interface cannot create its object: because it is default abstract class.
+2) Interface method cannot have logics: because internally they are public and abstract and abstract method cannot have logics so interface method also cannot have logics
+interface ABC
+ {  void show(); //public abstract void show()
+ }
+So if we want to write logic of interface method we must be implement interface in any another class and override its method and write its logic so if we want to implement interface method in any another class we have implements keyword.
+
+Syntax:
+class classname implements interfacename
+{
+    public returntype methodname(arguments)
+   {
+   }
+}
+Example
+package org.techhubapp;
+interface A
+{ void show();
+}
+class B implements A
+{    public void show() {
+		System.out.println("I am interface method");
+	}
+}
+public class InterfaceApplication {
+	public static void main(String[] args) {
+		B b1 = new B();
+		b1.show();
+	}
+}
+
+3) interface variables are by default final means if we want to declare any variable within interface we must be initialize some value in it and if not initialize it then compiler will generate compile time error to us.
+interface ABC
+{
+    float PI; //public static final float PI
+}
+public class ABCAPP
+{
+    public static void main(String x[])
+    {
+
+    }
+}
+if we think about above code we get compile time error  = expected  because we declare variable PI in interface and we not initialize value to the variable in interface but interface variables are by default final so when we declare it we must be initialize value in it so if we want to resolve this problem we need to initialize value to interface variables.
+interface ABC
+{  float PI=3.14f; //public static final float PI
+}
+public class ABCAPP
+{   public static void main(String x[])
+    {
+
+    }
+}
+Q. Why interface variables are by default static and final?
+Normally interface declare its variable as final because interface variable work as constant value and we cannot create object of interface but without object we can use interface variable by using its name so 
+they are static because static member can use without object and public because they can use at anywhere.
+4) Cannot declare interface method as protected?
+interface ABC
+{   protected void show();
+}
+public class ABCAPP
+{   public static void main(String x[])
+    {
+    }
+}
+above code generate compile time error to us because we declare interface method as protected.
+
+Q. if we declare abstract method within abstract class as protected and interface method is abstract so why we cannot declare it as protected even it is abstract?
+When we declare abstract method within abstract class then it work with by default with default access specifier and when we declare it as protected then protected can override on default so it is possible to declare abstract method as protected within abstract class shown in following diagram.
+
+ 
+when we declare abstract method within interface then it work by default with public access specifier and when we declare it  as protected then protected cannot override on public so compiler consider it as protected public after adding protected with abstract method within interface so in java there is no protected and public access specifier there is only protected or public or private or default but there is no combination of protected public so we get compile time error shown in following diagram.
+ 
+
+5) We cannot declare interface method as final : interface method is by default public and abstract and abstract must be override and final method cannot be override means behavior of abstract and final is opposite of each other so we cannot declare interface method as final and if we try to declare
+it then we get compile time error.
+interface ABCS
+{
+  final abstract void show();
+}
+public class AbsAbsApp
+{
+    public static void main(String x[])
+    {
+    }
+}
+Above code will generate compile time error because we declare interface method as final.
+
+6) Interface method cannot declare as static : we cannot declare interface method static because static method work with compile time polymorphism and  abstract method work with overriding and overriding work with dynamic polymorphism purpose or achieve run time polymorphism as well as static method is used for method hiding purpose and abstract method is used for method overriding purpose so these two reasons we cannot declare interface method as static and if we try to declare it as static then compiler will generate compile time error to us.
+
+interface ABCS
+{
+   static abstract void show();
+}
+public class AbsAbsApp
+{
+    public static void main(String x[])
+    {
+    }
+}
+above code generate compile time error because we declare abstract method in interface as static 
+
+7) when we want to perform inheritance between interface to interface we have extends keyword 
+
+Rules of inheritence 
+class to class  = extends 
+interface to class = implements 
+interface to interface= extends 
+class to integer  = not allowed.
+
+Example
+interface ABCS
+{
+    abstract void show();
+}
+interface MNOS extends ABCS
+{  abstract void display();
+}
+class D implements MNOS
+{  public void show(){
+	System.out.println("ABCS");
+   }
+   public void display(){
+    System.out.println("MNOS");
+   }
+}
+public class AbsAbsApp
+{
+    public static void main(String x[])
+    {   D d1 = new D();
+		  d1.show();
+		  d1.display();
+    }
+}
+
+8) if interface contain more than one methods then all method must be override where interface get 
+implemented because it is limitation of abstract methods and if we want to solve this problem we have to use adapter class 
+interface Test
+{  void s1();
+   void s2();
+} 
+class ADP implements Test
+{
+    public void s1(){
+    }
+    public void s2(){
+    }
+}
+class D extends ADP
+{
+    public void s1()
+    { System.out.println("I required this");
+	} 
+}
+public class InterfaceADPAPP
+{  public static void main(String x[])
+   {   D d1 = new D();
+		d1.s1();
+   }
+}
+8) We cannot create object of interface but can create its reference so if we want to create reference of interface we have to create object of its implementer class.
+Syntax: interfacename refname = new classname();
+
+interface A
+{ void show();
+}
+class B implements A
+{
+   public void show(){
+     System.out.println("I am interface method");
+    }
+}
+public class InterfaceRefApp
+{  public static void main(String x[])
+   {
+      A a1 = new B();
+	   a1.show();
+   }
+}
+The major goal of interface reference is achieve dynamic polymorphism.
+
+9) Cannot declare interface method as private
+private method cannot support to inheritance and overriding 
+When we use private access specifier with interface method and interface method is by default public abstract so after applying private with interface method then compiler considers it as private public and in java there is no private public access specifier in combination so compiler will generate compile time error to us.
+interface ABC
+{  private void show();//private public abstract void show();
+}
+
+How we can implement multiple inheritances by using interface and how we can resolve diamond problem?
+______________________________________________________________________________
+If we think about multiple inheritance using java then there is single parent class and single child class and more than one parent interface or all parent interfaces called as multiple inheritance using this approach we resolve diamond problem because when we have multiple parent as interface and if different parent may be contain same name method and if implement all interfaces in class in which method name is same then we must be override method in class where we implemented interface and if we create object of implementer class and try to call overridden method then by default child logic get executed so diamond problem not occur or resolve.
+ 
+
+Source code
+interface A
+{  void show();
+}
+interface B
+{  void show();
+}
+class C
+{   void show(){
+    System.out.println("I am C");
+   }
+}
+class D extends C implements A,B
+{  public void show()
+   {   System.out.println("I am D");
+   }
+}
+public class InfApp
+{  public static void main(String x[])
+   {  D d1 = new D();
+	   d1.show();
+
+   }
+}
+
+Q. what is diff between interface and abstract class?
+Interface	Abstract class
+Use interface keyword	Use abstract class
+Use for achieve 100% abstraction	Use for achieve partial abstraction
+Interface method by default public and abstract	Abstract method is not by default public and abstract need to declare it manually
+Interface method cannot declare as protected	Abstract method can declare as protected
+Interface variables are by default public static final	Abstract class variable may be final or not 
+Interface is used for achieve multiple inheritance	Abstract class not support to multiple inheritence
+Interface need to implements in another class	Abstract class need to extends in another class
+Interface can define method with static keyword or default from jdk 1.8 version 	Abstract class can define method with static or without static or without default keyword
+
+Q. what is diff between overloading and overriding?
+Overloading	Overriding
+Overloading use same name method with a different parameters , or data type or sequence of data 	Overriding means method name ,return type and parameter list must be same 
+Overloading can be perform using inheritance or without using inheritance	Overriding must be perform by using inheritance or by using anonymous inner class
+Overloading support to compile time polymorphism	Overriding support to run time polymorphism
+In overloading method calling is dependent on parameter pass in it, its data type and sequence of parameter and number of parameters	In overriding always child class logic executed if we create object of child class and try to call overridden method
+Overloading can happen in same class or using inheritance	Overriding can happen only in inheritance
+	
+
+Q. what is diff between compile time polymorphism and run time polymorphism?
+Compile time polymorphism	Runtime polymorphism
+Compile time polymorphism can perform by using method overloading	Run time polymorphism can implement by using method overriding
+Compile time polymorphism decide which method should call is decide at compile time 	Runtime polymorphism decide which method should call at run time by parent reference
+Compile time polymorphism can perform using normal method	Run time polymorphism can perform using abstract methods or using method overriding in run time polymorphism we create reference of parent class and store child class object in it and decide which child version should be executed.
+
+ 
+
+MCQ Question on Inheritance
+Question1: what will be the output of given code?
+ class Base {
+    public void show() {
+       System.out.println("Base::show() called");
+    }
+}
+ class Derived extends Base {
+    public void show () {
+       System.out.println ("Derived::show () called");
+    }
+}
+ 
+public class Main {
+    public static void main(String[] args) {
+        Base b = new Derived();;
+        b.show ();
+    }
+}
+Options
+
+(A) Derived::show() called
+
+(B) Base::show() called
+
+Answer: (A)
+
+Explanation: In the above program, b is a reference of Base type and refers to an object of Derived class. In Java, functions are virtual by default. So the run time polymorphism happens and derived fun() is called.
+
+Question2: what will be the output of given code?
+class Base {
+    final public void show() {
+       System.out.println("Base::show() called");
+    }
+}   
+class Derived extends Base {
+    public void show () {
+       System.out.println ("Derived::show () called");
+    }
+}
+ class Main {
+    public static void main (String[] args) {
+        Base b = new Derived ();;
+        b.show ();
+    }
+}
+Options
+_____________________________________________________________________________________
+(A) Base::show () called
+(B) Derived::show () called
+(C) Compiler Error
+(D) Runtime Error
+
+Answer: (C)
+Explanation: Final methods cannot be overridden. See the compiler error
+
+Question 3: what will be the output of given code?
+class Base {
+    public static void show() {
+       System.out.println("Base::show() called");
+    }
+}
+class Derived extends Base {
+    public static void show() {
+       System.out.println("Derived::show() called");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Base b = new Derived();
+        b.show();
+    }
+}
+Options
+_____________
+(A) Base::show () called
+(B) Derived::show () called
+(C) Compiler Error
+
+Answer: (A)
+Explanation: Like C++, when a function is static, runtime polymorphism doesn’t happen
+
+Question 4: what will be the output of given code?
+1) Private methods are final.
+2) Protected members are accessible within a package and 
+   Inherited classes outside the package.
+3) Protected methods are final.
+4) We cannot override private methods
+
+Options 
+(A) 1, 2 and 4
+(B) Only 1 and 2
+(C) 1, 2 and 3
+(D) 2, 3 and 4
+
+Answer: (A)
+
+
+
+
+
+Question5: what will be the output of given code?
+class Base {
+    public void Print() {
+        System.out.println("Base");
+    }         
+}  
+class Derived extends Base {    
+    public void Print() {
+        System.out.println("Derived");
+    }
+} 
+class Main{
+    public static void DoPrint( Base o ) {
+        o.Print();   
+    }
+    public static void main(String[] args) {
+        Base x = new Base();
+        Base y = new Derived();
+        Derived z = new Derived();
+        DoPrint(x);
+        DoPrint(y);
+        DoPrint(z);
+    }
+}
+(A)
+Base
+Derived
+Derived
+(B)
+Base
+Base
+Derived
+(C)
+Base
+Derived
+Base
+(D) Compiler Error
+
+Answer: (A)
+
+Explanation:  We create an object of type Base and call DoPrint(). DoPrint calls the print function and we get the first line.DoPrint(y) causes the second line of output. Like C++, assigning a derived class reference to a base class reference is allowed in Java. Therefore, the expression Base y = new Derived() is a valid statement in Java. In DoPrint(), o starts referring to the same object as referred by y. Also, unlike C++, functions are virtual by default in Java. So, when we call o.print (), the print() method of Derived class is called due to run time polymorphism present by default in Java. 
+DoPrint(z) causes the third line of output, we pass a reference of Derived type and the print() method of Derived class is called again. The point to note here is: unlike C++, object slicing doesn’t happen in Java. Because non-primitive types are always assigned by reference. 
+
+Question 6: what will be the output of given code?
+class Base {
+    public void foo() { System.out.println("Base"); }
+}
+   
+class Derived extends Base {
+    private void foo() { System.out.println("Derived"); } 
+}
+   
+public class Main {
+    public static void main(String args[]) {
+        Base b = new Derived();
+        b.foo();
+    }
+} 
+Options
+(A) Base
+(B) Derived
+(C) Compiler Error
+(D) Runtime Error
+
+Answer: (C)
+
+Explanation: It is compiler error to give more restrictive access to a derived class function which overrides a base class function.
+
+Question 7: Imagine you define the My Interface interface as shown in the following code snippet?
+interface MyInterface { 
+ //complete the code here 
+ final int mynum = 70; 
+} 
+Which of the following options will lead to compilation error?
+A. public final void myMethod();   B.    protected void myMethod();
+C. public void myMethod();    D.   private abstract void myMethod()
+
+Answer: The correct options are A, B, and D.
+Explanation: The following are the invalid method declarations in an interface:
+ public final void myMethod();
+ private abstract void myMethod();
+ protected void myMethod();
+
+A method within an interface cannot be marked as final, as final modifier disallows overriding of a method and the methods declared within an interface do not have method body. Therefore, the final modifier cannot be used as method declarations within an interface.  Within an interface, you cannot declare a method using both private and abstract as the private class members can be accessed only within the class in which they are declared. Therefore, a method declared within an interface is declared as public and not as private or protected. As a result, the option A, B, and D will lead to compilation error and are the correct answers
+
+
+
+
+
+Question 8: Imagine you write the following lines of code in your program:  
+class QuesSuper 
+{ 
+ public int mynum=0; 
+ public QuesSuper(String str) { 
+ mynum=10; 
+ } 
+} 
+public class QuesSub extends QuesSuper { 
+ public QuesSub(String str) { 
+ mynum=20; 
+ } 
+ public static void main(String args[]) { 
+ QuesSub sub= new QuesSub("Suchita"); 
+ System.out.println(sub.mynum); 
+ } 
+} 
+What will be the output after the preceding program is compiled and executed?
+A. The program will compile successfully and 20 will be displayed as output.
+B. The program will lead to compile time error.
+C. The program will compile successfully and 10 will be displayed as output.
+D. The program will compile successfully and 0 will be displayed as output.
+
+The correct option is B.
+Explanation: In the preceding program, the main() method of the QuesSub class invokes the constructor while creating an instance of the QuesSub class. Now before invoking constructor of the subclass constructor
+of the superclass is invoked. If constructor of the superclass is explicitly declared, then it is invoked else the default constructor is invoked. However in the above program constructor is explicitly declared with a parameter in  QuesSuper and the constructor of QuesSub class is not passing any value to it. Therefore the above program will lead compilation error and hence the correct option is B.
+
+
+
+Question 9: Imagine you want to clear your concept of nested classes and so you create a program containing nested and static classes. Consider that you have created the following program
+public class Ques43 { 
+ public static void main(String args[]) { 
+ TestOuter o = new TestOuter(); 
+ TestOuter.TestInner i = o.new TestInner(); 
+ TestOuter.TestStaticInner inner = new TestOuter.TestStaticInner(); 
+ } 
+} 
+class TestOuter { 
+ static int num1 = 100; 
+ TestOuter() { 
+ System.out.print("Welcome to the outer class" + “ ”); 
+ } 
+ class TestInner { 
+ TestInner() { 
+ System.out.print(TestOuter.num1 + “ “); 
+ } 
+ } 
+ static class TestStaticInner { 
+ static int staticnum = 200; 
+ TestStaticInner() { 
+ System.out.print(staticnum + “ “); 
+ } 
+ } 
+}
+What will be the output after you compile and execute the preceding program?
+A. The program compiles successfully and displays “Welcome to the outer class 100 200” as output.
+B. The program compiles successfully and displays “Welcome to the outer class 200 100” as output.
+C. The program compiles successfully and displays “Welcome to the outer class 100” as output.
+D. The program compiles successfully and displays “Welcome to the outer class 200” as output.
+
+The correct option is A.
+Explanation: The first statement in the main method creates an instance of the TestOuter class and then the second statement instantiates the TestInner class. The instantiation of the TestInner class is done by using the outer class instance as the TestInner class is a non‐static class. Finally an instance of the TestStaticInner class is created without using the instance of the TestOuter class as the TestStaticInner class is a static class. As a
+result the correct option is A
+
+Question 10 : Imagine you are working a Java programmer in the ABC Company and write the following program: 
+public class Ques48 
+{public static void main(String[] args) { 
+   Vehicle v = new Car(); 
+    System.out.print(v.getVehicle().getClass().getName() + “ “); 
+   System.out.print(v.getVehicle().getName()); 
+  } 
+} 
+class Vehicle { 
+ public Vehicle getVehicle() { 
+ return this; 
+ } 
+ public String getName() { 
+ return "Vehicle"; 
+ } 
+} 
+class Car extends Vehicle { 
+ public Vehicle getVehicle() { 
+ return this; 
+ } 
+ public String getName() { 
+ return "Car"; 
+ } 
+} 
+What will be the output after you compile and execute the preceding program?
+A. The program will lead to compilation errors as the Car class overloads the getVehicle method by changing its return type.  
+B. The program will compile successfully and display “com.kogent.Car Car” as output.
+C. The program will compile successfully but lead to runtime error.
+D. The program will lead to compilation error at  Vehicle v = new Car();
+
+The correct option is B.
+Explanation: The program will not lead to any compilation error as the getVehicle() and getName() are examples of method overriding and not overloading. Therefore the options A and D are incorrect.The code v.getVehicle() will return an instance of the Car class and its class name is com.kogent.Car, therefore the  correct option is B
+
+Question 11: Jerry is working as a Java Developer in XYZ Solution System. He writes the following classes in a program?
+class SuperClass
+ { 
+   public static void method1() 
+  { System.out.println("Static method in super  class"); 
+  } 
+} 
+class SubClass extends SuperClass 
+{ 
+ public static void method1() 
+ { System.out.println("Static method in sub class"); // line 1 
+ } 
+ public void method1()
+  { System.out.println("Non-static method in subclass"); 
+     // line 2 
+  } 
+}
+Which of the following options are true?
+A. If line 1 and line 2 are commented, then class SubClass will compile.
+B. If line 1 is commented, then class SubClass will compile.
+C. If line 2 is commented, then class SubClass will compile.
+D. None of the above options are true
+Options A and C are correct
+Explanation: The static method (method1() in SubClass) cannot be overridden by a non‐static method (method1 in SubClass) and vice versa
+
+Q 12. Mr. John is working in XYZ Company Ltd. He tries to compile and run the following program
+public class ObjectTest { 
+ public static void main (String args[ ] )
+ { 
+     X obj1 = new Z( ); 
+     Y obj2 = (Y) obj1; 
+    System.out.println(obj1.method1( ) ); 
+     System.out.println(obj2.a ); 
+  } 
+} 
+class X 
+{ int a = 100; 
+   int method1( ) 
+   { return a; 
+  } 
+} 
+class Y extends X 
+{ int a = 200; int method1( ) 
+   { return a; 
+    }
+ } 
+class Z extends Y 
+{ int a = 300; 
+   int method1( ) 
+    { return a; 
+    }
+ } 
+What will happen when he compiles and runs the preceding program?
+A. The program displays “300” followed by “300” as an output.
+B. The program displays “200” followed by “200” as an output.
+C. The Class cast exception is generated at runtime.
+D. The program displays “300” followed by “200” as an output.
+
+Option D is correct
+Explanation: Variable is accessed depending upon the class on which object is created, therefore, the obj2.a prints “200” as an output. The method is accessed depending upon the actual class of the object that is Referenced by the variable, therefore, the obj1.method1() prints “300” as an output.
+
+Question 13: Mr. David is working in XYZ Software Pvt. Ltd. He tries to compile and run the following program
+class X1 { 
+ void display() { 
+ System.out.print("display() method of X1 class"); 
+ } 
+} 
+class X2 extends X1 { 
+ void display() { 
+ System.out.print("display() method of X2 class"); 
+ } 
+} 
+class X3 extends X2 { 
+ void display() { 
+ System.out.print("display() method of X3 class"); 
+ } 
+ public static void main(String arg[]) { 
+   X1 x1 = new X1(); 
+   X2 x2 = new X2(); 
+   X3 x3 = new X3(); 
+   X1 obj; 
+    obj = x1; 
+   obj.display(); 
+   obj = x2; 
+   obj.display(); 
+   obj = x3; 
+   obj.display(); 
+ } 
+} 
+What will happen when he compiles and runs the preceding program? Choose more than one options, if correct.
+A. The program displays “display() method of X1 class” as an output.
+B. The program displays “display() method of X3 class” as an output.
+C. The program displays “display() method of X2 class” as an output.
+D. The program displays “display() method of X1 class” followed by “display() method of X2 class”
+followed by “display() method of X3 class” as an output
+Option D is correct.
+Explanation: In the preceding program, X1 is superclass of X2, and X2 is superclass of X3. All the class (X1,
+X2, and X3) overrides the display() method. Therefore, the display() method is invoked based on the object
+type of class. For example:
+X1=obj; 
+obj=x1; 
+obj.display(); 
+Here, in the preceding code, the reference variable obj of type X1; therefore, display () method is called on X1 class
+
+Question 14: Akbar works as a software developer in AAA Company. He tries to compile and run the following program:
+class Base1 
+{ 
+ Base1()
+  { print();
+  } 
+ void print()
+  { System.out.println("Base1");
+  } 
+} 
+class Base2 extends Base1
+ { 
+   int number = Math.round(7.4f); 
+ public static void main(String args[])
+ { 
+    Base1 base = new Base2(); 
+    base.print(); 
+ } 
+ void print() 
+  {System.out.println (number);
+  } //1 
+}
+What will happen when he compiles and runs the preceding program?
+A. Program displays “Base1” followed by”7” as an output.
+B. Program displays “Base1” followed by “Base1” as an output.
+C. Program displays”7” followed by “7” as an output.
+D. Program displays “0” followed by “7” as an output.
+Option D is correct.
+Explanation: The Base2 class extends the Base1 class. Both the classes have the overridden method print (). Here, when an object (base) of class Base2 is created, this object calls Base1ʹs constructor and then invokes
+The print () method. Now, which print() method is called (Base1 or Base2), here base object is created by Base2 class. Therefore, the Base2ʹs print () method is called at //1. At this point, variable number is not
+initialized (because we are still in Base1 class), so the default value of number (0) is printed and then final value of number (7) is printed
+
+Question 15: what will be the output of given code?
+class Base { 
+ public void doMethod1() { 
+ System.out.println("non static doMethod1 in Base class"); 
+ } 
+ public static void doMethod2() { 
+ System.out.println("static doMethod2 in Base class"); 
+ } 
+} 
+class Sub extends Base { 
+ public void doMethod1() { 
+ System.out.println("non static doMethod1 in Sub class"); 
+ } 
+ public static void doMethod2() { 
+ System.out.println("static doMethod2 in Sub class"); 
+ } 
+} 
+class SCJPQ05 { 
+ public static void main(String[] args) { 
+ Base obj1 = new Base(); //1 
+ obj1.doMethod1(); 
+ obj1.doMethod2(); 
+ obj1 = new Sub(); 
+ obj1.doMethod1(); //2 
+ obj1.doMethod2 (); 
+ } 
+}
+What will happen when she compiles and runs the preceding program?
+A. non static doMethod1 in Base class
+static doMethod2 in Base class
+non static doMethod1 in Sub class
+static doMethod2 in Sub class
+
+B. non static doMethod1 in Base class
+static doMethod2 in Base class
+non static doMethod1 in Sub class
+static doMethod2 in Base class
+
+C. non static doMethod1 in Base class
+static doMethod2 in Base class
+non static doMethod1 in Base class
+static doMethod2 in Sub class
+
+D. Program generates compile‐time error
+
+Option B is correct.
+Explanation: The object obj1 of the Base class is created at //1 and calls doMethod1() and doMethod2() of
+Base class. After calling doMethod1() and doMethod2() of Base class, the object obj1 is reference to Sub class
+at //2, but the class type is Base. This object is then called doMethod1() of Sub class and doMethod2() of Base
+class (here, doMethod2 () is called on Base class rather than Sub class because static methods are not override.
+
+Question 16: what will be the output of given code?
+
+class SuperClass { 
+ private int i; 
+ public void method1() { } 
+ public void method2() { } 
+} 
+class SubClass extends SuperClass { 
+ public int j; 
+ public void method2() { } 
+} 
+public class Test { 
+ public static void main (String args []) { 
+    SuperClass obj1 = new SuperClass(); //1 
+   SubClass obj2 = new SubClass(); //2 
+   obj2.method1 (); //3 
+   obj1.j=10; //4 
+   obj1.method2 (); //5 
+   obj2.i=50; //6 
+   } 
+ }
+Which of the following statements are invalid in the main() method?
+A. Statements at //4 and //6 are invalid statements.
+B. Statements at //1, //4 and //6 are invalid statements.
+C. Statements at //1, //2, //5, and //6 are invalid.
+D. All statements are invalid.
+Option A is correct.
+Explanation: The statement obj1.j=10 is invalid, because the object obj1 is created on Superclass and the instance variable j is not available in this class. Similarly, the statement obj2.i=50 is invalid because object
+obj2 is created on Subclass and the instance variable i is not available in this class.
+
+
+Question 17: what will be the output of given code?
+public class TestClass extends SuperClass { 
+ public static void main(String[] args) { 
+ TestClass object1 = new TestClass(); 
+   object1.printMsg(); 
+ } 
+ public void printMsg() { 
+ // 1 
+ } 
+} 
+class SuperClass { 
+ ABC objABC = new ABC(); 
+} 
+class ABC { 
+ String str = "Java World!"; 
+}
+
+Which of the following statements are used at //1 to print the message Java World!?
+A.    System.out.println (this.objABC.str); B.    System.out.println (objABC.str);
+C.    System.out.println (str);    D.    System.out.println (ABC.str);
+Options A and B are correct.
+
+Explanation: Within the main () method, an object (object1) of the TestClass is created, which holds the creation of a SuperClass instance (objABC) because TestClass extends the SuperClass. Now, the objABC object is available in TestClass. The objABC is an instance of ABC class, this ABC class has a member variable str. Thus, the str object can be accessed directly by objABC.str or this.objABC.str. Here, this (this.objABC.str) refer to current object (object1).
+
+Question17: what will be the output of given code?
+public class TestClass { 
+ public static void main (String[] args) {
+      Sub objSub = new Sub(" Inc"); 
+ } 
+} 
+class Base { 
+ Base() { //2 
+ this("Kogent ", "Solution"); 
+ } 
+ Base(String s, String t) { //3 
+ this(s + t); 
+ } 
+ Base(String s) { //4 
+ System.out.print(s); 
+ } 
+} 
+class Sub extends Base { 
+ Sub(String s) { //1 
+ System.out.print(s); 
+ } 
+ Sub(String s, String t) { 
+ this (t + s + "1"); 
+ } 
+ Sub () { 
+ super ("2"); 
+ }; 
+}
+What will happen when you compile and run the preceding program?
+A. It displays “Inc” as an output.     B.  It displays “Inc Inc” as an output.
+C. It displays “Kogent Solution Inc” as an output. D.  It displays “Inc 2 Kogent Solution” as an output
+
+Option C is correct.
+Explanation: Within the main() method, the object objSub of the Sub class is created by passing Inc as an argument. This object calls Sub class constructor at //1. The default constructor of Base class is called at //2
+(by default any subclass calls its superclass’s default constructor.) Within the body of default constructor at //2, it calls constructor at //3 and this constructor (Base(String s, String t)) calls constructor at //4 and add the
+string value Kogent Solution. Finally, the constructor at //1 is executed and displays Kogent Solution Inc as an output
+
+Program on Inheritance
+
+
+1. Write the code to implement the concept of inheritance for Vehicles. You are required to implement inheritance between classes. You have to write four classes in java i.e. one superclass, two sub classes and one driver class.
+Vehicle is the super class whereas Bus and Truck are sub classes of Vehicle class. Transport is a driver class which contains main method.
+Detailed description:
+Detailed description of Vehicle (Super class):
+The class Vehicle must have following attributes:
+1.	Vehicle model
+2.	Registration number
+3.	Vehicle speed (km/hour)
+4.	Fuel capacity (liters)
+5.	Fuel consumption (kilo meters/liter)
+The Vehicle class must have following methods:
+1.	Parameterized constructor that will initialize all the datamembers with the given values.
+2.	Getters and Setters for each data member that will get and setthe values of data members of class.
+3.	A method fuelNeeded() that will takedistance (in kilo meter) as an argument.It will calculate the amount of fuel needed for the given distanceand will return the value of fuel needed for given distance. Youcan use the attributes ‘Fuel consumption’defined within above Vehicle class to determine the fuel needed forthe given distance. You are required to implement thisfunctionality by yourself.
+4.	A method distanceCovered() that willtake time (in hours) as an argument. Itwill calculate the distance for the given time and speed andreturns the value of distance. The formula to calculate speed isgiven as speed = distance/time. You can use thisformula to calculate the distance.
+5.	A display() method that will displayall the information of a vehicle.
+Detailed description of Truck (Sub class):
+The class Truck must have following attribute:
+Cargo weight limit (Kilo grams)
+The above class must have following methods:
+1.	Parameterized constructor that will initialize all data memberswith the given values.
+2.	Getters and setters for each data member that will get and setthe values of data members of class.
+3.	It must also override the display()method of Vehicle class and must call display() method of superclass within overridden method.
+Detailed description of Bus (Sub class):
+The class Bus must have following attribute:
+No of passengers
+The above class must have following methods:
+1.	Parameterized constructor that will initialize all the datamembers with given values.
+2.	Getters and setters that will get and set the value of eachdata member of class.
+3.	It must also override the display()method of Vehicle class and must call display method of super classwithin overridden method.
+Create a class Transport whichcontains the main method. Perform the following within mainmethod:
+•	Create an instance of class Truck and initialize all the datamembers with proper values.
+•	Create an instance of class Bus and initialize all the datamembers with proper values.
+•	Now, call fuelNeeded(),distanceCovered() anddisplay() methods using objects of theseclasses.
+
+2. WAP To implement the concept of Inheritence for Engg Result.You are required to implement inheritance between classes. You have to write four classes in java i.e. one superclass, two sub classes and one driver class.
+ 
+
+
+In Percentage class contain the one method name as calPer(int s[])   with subject marks array
+ 
+There are two child classes First is CSE and Second is ETC so first we will discuss about the CSE class
+In CSE class contain the parameterized constructor and  one method name as showCsePer()
+Following sample code 
+ 
+In ETC class contain the one parametarized constructor and one method name as showETCPer()
+ 
+
+
+
+Then we need to create the main class name as ResultApp and in class we need to write the main method given below
+ 	
+3. WAP using  inheritance with a simple Interest Rate Formula for calculate the interest on loan we have the following class hierarchy and conditions given below
+ 
+ 
+ 
+
+
+4. WAP to create the abstract class name as Area with showArea() abstract method and declare the two child classes name as Circle and Rectangle with a following methods 
+ 
+Create the class name as Circle and inherit the Area class in it and override the showArea() as well as define the setRadius() method in Circle class.
+ 
+Declare the class name as Rectangle and inherit the Area class in it and override the showArea() method with a setLenghtWidth() function 
+ 
+
+Create the main name as AreaApplication 
+ 
+
+5.WAP  create interface name as ArrayOperation with  method name as PerformOperation(int [])
+   And its implementor classes given below
+ 
+ 
+ 
+ 
+In above example  we define the interface name as ArrayOperation with method performOperation(int[]) meaning is we can perform the operation on array but we cannot mention which operation depending on child implementor classes 
+Means we can implement the interface in Sorting class and implement the ArrayOperation and write the sorting logics in performOperation() method 
+In Insertion class implement the Interface ArrayOperation and  override the ArrayOperation method in it but before that we need to call the setValue() method in this method can pass the index and value as two parameter for insert the value on specified index 
+And so on 
+Lastly we need to create the Main Method class name as ArrayInfOperationApp  
+When we press the 1 then call the Sorting logics and when we press the 2 then call the Insert value on specified index in array when we press the 3 then call the Deletion element from array logics and when we press 4 then perform array reverse operation 
+ 
+
+
+
+
+6.WAP to create the abstract class name as Animal  with method makeSound() and its two child classes name as Dog and Cat.We need to inherit the Animal class in Dog and Cat and override the makeSound() method in it and write the message as per sound as his category.
+
+ 
+ 
+7.WAP to create the abstract class name as StringOperation with method name as performOperation(String) and write its different logics in different child classes as per give diagram.
+ 
+Above diagram source code structure given below only you need to put the logics in method.
+
+ 
+We need to inherit StringOperation class in ConvertToUpper class for convert the string from lower case string to upper case string
+Means here we need to create the class name as ConvertToUpper class and override the performOperation() method of StringOperation and write the manual logics for convert lower case string to upper case without using inbuilt function of string.
+ shown in following code snippets.
+ 
+Again we need to inherit the StringOperation class in MaxRepetativeChar class and override the performOperation() method in MaxRepetativeChar class and check which character having a max repetation in string without using a inbuilt function of string.
+Shown in following code snippets
+ 
+Again we need to inherit the StringOperation class in WordReverse class and override the performOperation() method in WordReverse class and reverse the only word characters in string not reverse the string suppose 
+e.g Good Morning India 
+output like as :  dooG gninroM aidnI
+Shown in following code snippets
+ 
+8.WAP to design the Calculator Example using a Loose Coupling ?
+ 
+Explanation of above diagram 
+In above diagram we have the Value is abstract class and it contain the performCalculation() method 
+It is abstract method and in this class contain the one another method name as setValue() is normal method here we can accept the two values and store in instance variable shown in given code .
+ 
+
+And this class is parent class of Add,Sub ,Mul,Div classes. We need to inherit the Value class
+In all child classes and we need to override the performCalculation() method and write the logics 
+Differently in every child classes shown in following code snippet.
+ 
+ 
+We have another class name as Calculator this class is depend on Value class for perform any operation like as addition,substraction,multiplication or division 
+Means for this purpose we create method name as  performOperation(Value) s
+In this method we pass the reference of Value class and it is parent class of all classes means this method can accept the reference of any of its child classes and call  performCalculation() as per the child object shown in following  code.
+
+
+ 
+Again we need to create the main method class and and perform the following operation as per given instruction
+ 
+
+
+
+
+

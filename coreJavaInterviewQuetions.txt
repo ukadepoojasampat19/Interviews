@@ -1,0 +1,2100 @@
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+-------------------------------------------------------------------------------------------------------------
+pg. 1 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Core java Revision and Study plan(4 days)
+Introduction and Basic Chapter 
+Note: Prepare notes before learn interview questions
+ Day1:
+1. What is java and explain feature of java?
+2. Why java is platform independent language?
+3. What is byte code and importance of byte code?
+4. What is difference between byte code and machine code?
+5. What is diff between platform independency and cross platform?
+6. What is OOP and explain depth?
+7. What are the pillars of OOP?
+8. What is diff between semi object oriented and pure object oriented?
+9. What is JDK, JRE and JVM?
+10. What is diff between JDK JRE and JVM?
+11. What is JVM and explain its architecture?
+12. What is array and how many ways to declare array in java?
+13. What is diff between C array and java array?
+14. What is Jagged Array in java?
+15. What is anonymous array in java?
+Programs for practice?
+1. Write program to input two values using command line argument and perform its swapping?
+2. Write program to input number using Scanner class and reverse it?
+3. Write program to character from keyboard and check character is alphabet digit or special 
+symbols?
+4. Write a program to input number and print its table?
+5. Write program to input number and check number is perfect or not?
+6. Write program to input number and check number is duck or not?
+7. Write a program to input number and check number is palindrome or not?
+8. Write program to input number and check number is Armstrong or not?
+9. Write program to check number is prime or not?
+10. Write program to create array of size 5 and display its value?
+11. Write program to create array of size 5 and find max value?
+12. Write program to create array of size and arrange all values in ascending order?
+13. Write program to create array of size 5 and input search key value and search value in array 
+and if value found return its index and return -1
+14. Write program to create array of size 10 and find occurrence of every element in array?
+15. Write program to create array of size 5 and reverse it
+MCQ Questions 
+Question1 :
+public class P {
+ public static void main(String[] args) {
+ 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 2 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ int a = 10, b = 5, c = 1, result;
+ result = a-++c-++b;
+ // result = a-(2)-(6) 
+ // result = 10-2=8
+ // result = 8-6
+ // result = 2
+ System.out.println (result);
+ }
+}
+Q2. What will be output of given code?
+public class Second
+{ public static void main(String x1[]) {
+ int x = 0, y = 0 , z = 0 ;
+ x = (++x + y-- ) * z++;
+ System.out.println("X is "+x);
+ }
+}
+Q3. What will be output of given code?
+class Numbers{
+ public static void main(String args[]){
+ int a=20, b=10;
+ if((a < b) && (b++ < 25)){
+ System.out.println("This is any language logic");
+ }
+ System.out.println(b); 
+ }
+}
+Q4. What will be output of given code?
+class IncDec
+{ public static void main(String s[])
+ { int a = 1;
+ int b = 2;
+ int c;
+ int d;
+ c = ++b;
+ d = a++;
+ c++;
+ System.out.println ("a = " + a);
+ System.out.println ("b = " + b);
+ System.out.println ("c = " + c);
+ System.out.println ("d = " + d);
+ }
+}
+Q5. What will be output of given code?
+package org.techhub;
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 3 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+public class Demo
+{ public static void main(String[] args)
+ { int i, j, k, l = 0;
+ k = l++;
+ j = ++k;
+ i = j++;
+ System.out.println("I is "+i);
+ }
+}
+Q6. What will be output of given code?
+package org.techhub;
+class Demo
+{ public static void main(String s[])
+ { int i = 34.0;
+ int j = 7;
+ int k = i % j;
+ System.out.println("k = " + k );
+ }
+} 
+Q7. What will be output of given code?
+package org.techhub;
+class Demo{
+ public static void main(String args[])
+ {
+ int var1 = 42;
+ int var2 = ~var1;
+ System.out.print(var1 + " " + var2); 
+ } 
+}
+Q8. What will be output of given code?
+package org.techhub;
+class Demo {
+public static void main(String args[]) {
+int a = 3;
+int b = 6;
+int c = a | b;
+int d = a & b;
+System.out.println(c + "\t" + d);
+}
+}
+Q9. What will be output of given code?
+class Demo {
+ public static void main(String args[]) 
+ { byte x = 64;
+ int i;
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 4 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ byte y; 
+ i = x << 2;
+ y = (byte) (x << 2);
+ System.out.print(i + "\t" + y);
+ } 
+}
+Q10. What will be output of given code?
+package org.techhub;
+class Demo {
+ public static void main(String args[]) 
+ { 
+ int x; 
+ x = 10;
+ x = x >> 1;
+ System.out.println(x);
+ } 
+}
+Q11. What will be output of given code?
+Consider the following various array declarations:
+int [] ar1, arr2[]; 
+int[][] arr3; 
+int[] arr4[], arr5[]; 
+Q12. What will be output of given code?
+class Rose{ 
+public void sam() { 
+int y[] = {4, 2, 8}; 
+for (int x=2; x<1+3*2-4; x++){ 
+System.out.print(x+” “); 
+for (int j:y) { 
+ j=j*x-4; 
+System.out.print(j+” “); 
+} 
+} 
+} 
+public static void main(String[] args) { 
+Rose r = new Rose(); 
+r.sam(); 
+} 
+}
+Q13. What will be output of given code?
+import java.util.*;
+public class MatrixApplication{
+ public static void main(String x[])
+ {
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 5 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ Scanner xyz = new Scanner(System.in);
+ int a[][]=new int[3][];
+ a[0]=new int[3];
+ a[1]=new int[4];
+ a[2]=new int[2];
+ System.out.println("Enter the values in matrix");
+ for(int i=0; i<a.length; i++)
+ {
+ for(int j=0; j<a[i].length; j++)
+ { a[i][j]=xyz.nextInt();
+ }
+ }
+ System.out.println("display the matrix");
+ for(int i=0; i<a.length; i++)
+ { for(int j=0; j<a[i].length; j++)
+ { System.out.printf("%d\t",a[i][j]);
+ }
+ System.out.printf("\n");
+ }
+ }
+}
+Interview Question on classes and object and constructor (Day2)
+Q1. what is class and why use it?
+Q2. How we can reuse class more than one time?
+Q3. what is encapsulation and explain encapsulation with real time scenario?
+Q4. what is diff instance variable, static variable and local variable?
+Q5. what is static keyword and explain static variable, static method?
+Q6. Explain any 4 important points related with static and instance variable?
+Q7. what is method variable arguments?
+Q8. what is array of object and how create array of object in java?
+Q9. what is Meta section and why use it?
+Q10. is It true static variable not stored in object?
+Q11. is it true static variable stored in Meta section?
+Q12. is it true instance variable allocate memory after object?
+Q13. is it true we cannot declare class as private, static and protected?
+Q14. what is nested class?
+Q15. What is constructor and why use constructor?
+Q16. Explain types of constructors?
+Q.17. what is constructor overloading explain with example?
+Q18. What is constructor chaining and explain this() constructor?
+Q19. What is singleton class and how to create it ?
+Q20. What is utility class in java and how to create it?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 6 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Practice Program on classes and objects
+Q1. Write a program to create class name as Cube with two methods 
+void setValue(int x): this function accept number as parameter
+int getCube(): this function can calculate cube of number and return it.
+Q2. Write program to create class name as Factorial with two functions 
+ void setValue(int x): this function accept number as parameter
+ int getFactorial(): this function can calculate factorial of number and return it.
+Q3. Write program to create class name as CheckChar with two functions 
+ void setChar(char ch): this function accept single character as input 
+ boolean checkChar(): this function can check character is alphabet or digit of special symbol if 
+character is alphabet or digit return true if character is digit then return false.
+Q3. Write program to create class name as FindMax with two functions 
+ void setArray(int a[]): this function is used for accept array as parameter 
+ int getMax(): this function can find the max value from array and return it.
+Q4. Write program to create class name as SortArr with two functions 
+ void setArray(int a[]): this function can accept array as parameter 
+ int [] getSortArray(): this function can perform sorting on array and return sorted array 
+Q5. Write program to create POJO class name as Employee with id,name and salary attribute and 
+store data in object and retrieve data from object
+Q6. Write program to create class name as CheckDuck with parameterized constructor 
+ CheckDuck(int no): this constructor can accept number as parameter
+ Boolean isDuckNumber(): this function check if number is duck return true otherwise return false.
+Q7. Write program to create class name as Area with constructor overloading 
+ Area(float radius): this function can accept radius as input and calculate circle Area
+ Area(int len,int width): this function can accept len and width as input and calculate area of 
+rectangle
+Q8. Write program to create class name as MergeTwoArray with parameterized constructor 
+MergeTwoArray(int [],int []): this constructor accept two array as parameter
+int [] getMergeArray(): this function merge two array in third array and return new merged array
+Q9. Write program for write code for singleton class?
+Q10. Write code for utility class?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 7 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+MCQ Questions
+Q1. Find the output of given code?
+public class VarargsExample
+{ public static void displayNames(String... names)
+ { for (String mynames:names)
+ { 
+ System.out.print(mynames + “ “);
+ }
+}
+public static void main(String args[])
+ { 
+ displayNames("Alex","Richard","John");
+ }
+}
+Q2. Find the output of given code?
+class Ques2 {
+int eval(int[]...vars)
+{ int sum=0, b, c;
+for(b = 0; b<vars.length; b++) {
+for(c=0;c<vars[b].length; c++) {
+sum += vars[b][c];
+}
+}
+return(sum);
+}
+public static void main(String args[])
+{ Ques2 varargs = new Ques2();
+int sum =0;
+sum = varargs.eval(new int[]{10,20,30,40}, new int[]{40,50,60});
+System.out.println("The sum of the numbers is:" + sum);
+}
+}
+Q3. Find the output of given code?
+class Ques3{
+public static void main(String args[]) {
+int x = 201;
+myMethod(x++);
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 8 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+System.out.println(x);
+}
+static void myMethod(int x)
+{ x %= 10;
+System.out.println(x);
+ } 
+}
+Question4: Which of the following statements are true based on the use of modifiers?
+A. Local variables can be declared either static or transient.
+B. The visibility of the local variables cannot be specified.
+C. By default the variable is accessible within the same class and subclass of the super class.
+D. The visibility of the local variables is default.
+Question5. Which of the following are valid declarations of the main () method?
+A. static main(String args[]){ } B. public static String main(String args[]) {… }
+C. public static void main(String args[]) {….} D. final static void main(String args[]) {….}
+Question6. Which of the following is the correct higher to lower order of restrictiveness for access 
+specifies?
+A. public> default(within the package)> protected> private
+B. private> default(within the package)> protected> public
+C. private> protected> default(within the package)> public
+D. protected> default(within the package)> private> public
+Question7. Find the output of given code?
+public class Ques9
+{ public void myMethod1()
+{ static int num1=100;
+final int num2=200;
+System.out.println("The value of first variable is " + num1);
+System.out.println("The value of second variable is " + num2);
+}
+public void myMethod2()
+{ int arr[] = new int[2];
+System.out.println(arr[arr.length-1]);
+}
+public static void main(String args[]) {
+new Ques9().myMethod1();
+new Ques9().myMethod2();
+}
+}
+Q8. Find the output of given code?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 9 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+public class Ques10
+{ private static int num1 = 100;
+private int num2 = 200;
+public static void myMethod1()
+{ num1 = 300;
+num2 = 400;
+System.out.println(num1 + “,” + num2);
+}
+public static void myMethod2()
+{
+num1 = 300;
+Ques10.num2 = 400;
+}
+public void myMethod3()
+{
+num1 = 300;
+num2 = 400;
+}
+public void myMethod4()
+{
+Ques10.num1 = 300;
+num2 = 400;
+}
+public static void main(String args[])
+{
+Ques10 q = new Ques10();
+q.myMethod1();
+}
+}
+Q11. Find the output of given code?
+public class Ques11 {
+public static void main(String args[])
+{ Ques11 q = new Ques11();
+q.method(30);
+byte b = 3;
+q.method(b);
+}
+public void method(Integer i)
+{ System.out.print("Integer value is: " + i + “ “);
+}
+public void method(short s)
+{ System.out.print("Short value is: " + s + “ “);
+}
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 10 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+public void method(byte t)
+{ System.out.print("Byte value is: " + t + “ “);
+}
+public void method(int num)
+{ System.out.print("Int value is: " + num + “ “);
+}
+}
+Q12. Find the output of given code?
+public class Ques12
+{
+public static void main(String args[])
+{
+Ques12 q = new Ques12();
+q.myMethod (10,20);
+q.myMethod (new long[]{});
+q.myMethod (new int[]{10,20});
+}
+void myMethod (short s1, short s2)
+{
+System.out.println ("short");
+}
+void myMethod (int i1, int i2)
+{ System.out.println ("int");
+}
+void myMethod (int ...args)
+{
+System.out.println ("intargs");
+}
+}
+Q13. Find the output of given code?
+public class Ques13
+{ public static void main(String args[])
+{
+System.out.println(myMethod(myMethod(new int[] {10,20}),myMethod(10,20)));
+}
+static int myMethod(int num1, int num2)
+{ return 10;
+}
+static int myMethod(int... args)
+{ return 20;
+}
+}
+Q14. Find the output of given code?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 11 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+What will be output of the preceding program?
+A. The program will compile successfully and display 10 as output.
+B. The program will lead to compile time error as the myMethod with int [], int [] argument is not 
+defined.
+C. The program will compile successfully but lead to runtime exception.
+D. The program will compile successfully and display 20 as output
+Q15. Which of the following statements are true in the context of the preceding program?
+A. The program will lead to compilation error as a non–static variable cannot be accessed from static 
+context.
+B. The program will compile successfully but lead to runtime exception.
+C. The program will lead to compile time error as the String variable str is not assigned a value.
+D. The program will compile successfully and print 4 as output.
+Inheritance , super(),final,abstract,interface practice (Day3 and Day4)
+Q1. what is inheritance and why use it?
+Q2. explain types of inheritance in java?
+Q3. Can we create java program without inheritance?
+Q4. Why Object class is parent of every class in java?
+Q5. is true if parent contain default constructor, then it is executed before child?
+Q6. is true if parent contain parameterized constructor, then programmer must be pass parameter 
+from child?
+Q7. what is super() constructor and why use it?
+Q8. is it possible super() constructor write on second line of code?
+Q9. is it possible super() and this() use at same time?
+Q10. is it true super() pass parameter to immediate parent class?
+Q11. what is final keyword and explain in depth?
+Q12. how we can avoid method overriding in java?
+Q13. why use method overriding and explain its benefit?
+Q14. is method overriding is beneficial every time?
+Q15. what is diff between static and final variable?
+Q16. can we use static and final at same time?
+Q17. can we override final method in java?
+Q18. what is abstract class and abstract method?
+Q19. what is abstraction in java and how we can achieve it?
+Q20. what is diff between abstraction and encapsulation?
+Q21. what is diff between final and abstract method?
+Q22. is it true abstract method must be override in child class?
+Q23. Can we override constructor?
+Q24. can we declare constructor as abstract?
+Q25. Can we declare constructor as final?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 12 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q26. Can we declare abstract method as static?
+Q27. can we declare abstract method as final?
+Q28. Can we declare abstract method as private?
+Q29. can we declare abstract method as protected?
+Q30. Can we declare method as protected in parent and can override as public?
+Q31. can we declare method as protected in parent and override can default?
+Q32. can we declare method as public in parent and override as default or protected?
+Q33. what is diff between overloading and overriding?
+Q34. what is diff between static and final?
+Q35. what is diff between static and abstract?
+Q36. what is concreate class in java?
+Q37. what is adapter class and why use it and how to create it?
+Q38. what is interface in java?
+Q39. is it true interface variable by default public static final?
+Q40. can define method within interface?
+Q41. is it true interface is used for achieve 100% abstraction?
+Q42. can we declare interface method as protected?
+Q43. can we declare interface method as static with reason?
+Q44. Can we declare interface method as public?
+Q45. can we inherit one interface to another interface using extends keyword?
+Q46. Can we implement interface in class?
+Q47. how to solve diamond problem using interface?
+Q48. how to achieve multiple inheritance using interface?
+Q49. what is diff between interface and abstract class?
+Q50. Can we override static method?
+Q51. what is method hiding in java and explain in detail?
+Q52. what is diff between hiding and overriding?
+Q53. what is dynamic polymorphism and how we can achieve in java with code?
+Q54. What is coupling in java and explain detail?
+Q55. What is IS-A relationship and what is HAS-A relationship in java?
+Program Practice on inheritance
+Q1. Write a program to crate class name as Value with single function name as setValue(int,int) and 
+we have to create three child classes name as Add with function int getAdd() , Mul with function 
+getMul() and Div with function getDiv() and getAdd() function return addition of two value which is 
+inherited from Value class , getMul() function return multiplication of two values which is inherited 
+from Value class and gitDiv() function return division of two values which Is inherited from Value 
+class.
+Q2. Write program to create class name Area with methods name as void setRadius(float radius) and 
+void setLengthWidth(int len,int wid) and two child classes name as Circle and Rectangle so you have 
+to define float getCircleArea() method in Circle child class and calculate area of circle and return it 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 13 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+and You have to define getRectArea() method in Rectangle class and calculate area of rectangle and
+return it 
+Q3. Write Program create class name as ArrSum with method void setValue(int arr[]) you have to 
+create child class name as GetSum with method int getArrSum() you have to accept array values 
+from ArrSum and calculate its sum and return it 
+Q4. Write program to Create class name as PersonalInfo with parameterized constructor 
+PersonalInfo(String name, String middlename, String lastname) and you have to create class name as 
+ProfessionalInfo with parameterized constructor like as ProfessionalInfo(int id,String des,int 
+salary,String skillset) and you have to inherit PersonalInfo class in ProfessionalInfo and pass 
+parameter from ProfessionalInfo class to PersonalInfo using super() constructor and you have to 
+define void show() method in ProfessionalInfo and you have to show the all data in show() method.
+Q5. Write Program to perform method overriding you have to create class name as ArrParent with 
+method
+void setValue(int arr[]): this method can accept array as parameter 
+void arrangeSeq(): this method can display array as per user input sequence
+You have to create two child class name as ArrangeAscendingOrder and you have to inherit 
+ArrParent class in it and override arrangeSeq() method in ArrangeAscendingOrder and sort array and 
+display in ascending order and you have to create one more class name ReverseArray and override 
+arrangeSeq() method from ArrParent and reverse array and display it.
+Q6. Write Program to create abstract class name as Value with one abstract and one non abstract 
+method 
+void setValue(int ,int): this is non abstract method with two parameter 
+abstract int getResult(): this is abstract method 
+and you have two child class name as Power and you have to override getResult() method in Power 
+class and calculate power of two values and return it as well as SearchDigit and you have to override 
+getResult() consider first parameter of setValue() is number and second parameter is digit and you 
+have to search digit in number and return it and if digit not found return -1
+Q7. Write Program to create class name as ArrAbs with two methods 
+void setArray(int arr[],int []): this function is used for accept array as parameter
+abstract int [] getResultantArray(): this function can return resultant array from different child 
+classes.
+You have to create two classes name as InterSection you have to override getResultantArray() 
+method in Intersection and perform intersection of array which we pass in setArray() function and 
+return it as well as you have to create one more class name as Union you have to override 
+getResultantArray() and perform union on two array and return resultant array 
+Q8. Write program to create interface name as CharOperator with method 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 14 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+void setCharArr(char []): this function is used for accept array as parameter 
+char [] getArrResult(): this is abstract function and return character array as result.
+You have to create two implementer class name as ConvertToUpper and ChangeAlterNateChar you 
+have to implement the CharOperator interface in ConvertToUpper class and override both methods 
+and convert lower case character to upper case and you have to implement the CharOperator in 
+ChangeAlterNateChar and override both methods and convert even position character as Upper and 
+odd position characters in lower.
+Q9. Write a program to create Demonstrate code for multiple inheritance using interface.
+MCQ Question on inheritance
+Question1: what will be the output of given code?
+class Base {
+ public void show() {
+ System.out.println ("Base::show () called");
+ }
+}
+class Derived extends Base {
+ public void show () {
+ System.out.println ("Derived::show () called");
+ }
+}
+public class Main {
+ public static void main(String[] args) {
+ Base b = new Derived();;
+ b.show ();
+ }
+}
+Options
+(A) Derived::show() called
+(B) Base::show() called
+Question2: what will be the output of given code?
+class Base {
+ final public void show() {
+ System.out.println ("Base::show () called");
+ }
+} 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 15 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+class Derived extends Base {
+ public void show () {
+ System.out.println ("Derived::show () called");
+ }
+}
+class Main {
+ public static void main (String[] args) {
+ Base b = new Derived ();;
+ b.show ();
+ }
+}
+Options
+__________________________________________________________________________________
+___
+(A) Base::show () called
+(B) Derived::show () called
+(C) Compiler Error
+(D) Runtime Error
+Question 3: what will be the output of given code?
+class Base {
+ public static void show() {
+ System.out.println("Base::show() called");
+ }
+}
+class Derived extends Base {
+ public static void show() {
+ System.out.println("Derived::show() called");
+ }
+}
+class Main {
+ public static void main(String[] args) {
+ Base b = new Derived();
+ b.show();
+ }
+}
+Options
+_____________
+(A) Base::show () called
+(B) Derived::show () called
+(C) Compiler Error
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 16 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Question 4: what will be the output of given code?
+1) Private methods are final.
+2) Protected members are accessible within a package and 
+ Inherited classes outside the package.
+3) Protected methods are final.
+4) We cannot override private methods
+Options 
+(A) 1, 2 and 4
+(B) Only 1 and 2
+(C) 1, 2 and 3
+(D) 2, 3 and 4
+Question5: what will be the output of given code?
+class Base {
+ public void Print() {
+ System.out.println("Base");
+ } 
+} 
+class Derived extends Base { 
+ public void Print() {
+ System.out.println("Derived");
+ }
+} 
+class Main{
+ public static void DoPrint( Base o ) {
+ o.Print(); 
+ }
+ public static void main(String[] args) {
+ Base x = new Base();
+ Base y = new Derived();
+ Derived z = new Derived();
+ DoPrint(x);
+ DoPrint(y);
+ DoPrint(z);
+ }
+}
+(A)
+Base
+Derived
+Derived
+(B)
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 17 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Base
+Base
+Derived
+(C)
+Base
+Derived
+Base
+(D) Compiler Error
+Question 6: what will be the output of given code?
+class Base {
+ public void foo() { System.out.println("Base"); }
+}
+ 
+class Derived extends Base {
+ private void foo() { System.out.println("Derived"); } 
+}
+ 
+public class Main {
+ public static void main(String args[]) {
+ Base b = new Derived();
+ b.foo();
+ }
+} 
+Options
+(A) Base
+(B) Derived
+(C) Compiler Error
+(D) Runtime Error
+Question 7: Imagine you define the My Interface interface as shown in the following code snippet?
+interface MyInterface { 
+//complete the code here 
+final int mynum = 70; 
+} 
+Which of the following options will lead to compilation error?
+A. public final void myMethod(); B. protected void myMethod();
+C. public void myMethod(); D. private abstract void myMethod()
+Question 8: Imagine you write the following lines of code in your program: 
+class QuesSuper 
+{ 
+public int mynum=0; 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 18 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+public QuesSuper(String str) { 
+mynum=10; 
+} 
+} 
+public class QuesSub extends QuesSuper { 
+public QuesSub(String str) { 
+mynum=20; 
+} 
+public static void main(String args[]) { 
+QuesSub sub= new QuesSub("Suchita"); 
+System.out.println(sub.mynum); 
+} 
+} 
+What will be the output after the preceding program is compiled and executed?
+A. The program will compile successfully and 20 will be displayed as output.
+B. The program will lead to compile time error.
+C. The program will compile successfully and 10 will be displayed as output.
+D. The program will compile successfully and 0 will be displayed as output.
+Question 9: Imagine you want to clear your concept of nested classes and so you create a program 
+containing nested and static classes. Consider that you have created the following program
+public class Ques43 { 
+public static void main(String args[]) { 
+TestOuter o = new TestOuter(); 
+TestOuter.TestInner i = o.new TestInner(); 
+TestOuter.TestStaticInner inner = new TestOuter.TestStaticInner(); 
+} 
+} 
+class TestOuter { 
+static int num1 = 100; 
+TestOuter() { 
+System.out.print("Welcome to the outer class" + “ ”); 
+} 
+class TestInner { 
+TestInner() { 
+System.out.print(TestOuter.num1 + “ “); 
+} 
+} 
+static class TestStaticInner { 
+static int staticnum = 200; 
+TestStaticInner() { 
+System.out.print(staticnum + “ “); 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 19 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+} 
+} 
+}
+What will be the output after you compile and execute the preceding program?
+A. The program compiles successfully and displays “Welcome to the outer class 100 200” as output.
+B. The program compiles successfully and displays “Welcome to the outer class 200 100” as output.
+C. The program compiles successfully and displays “Welcome to the outer class 100” as output.
+D. The program compiles successfully and displays “Welcome to the outer class 200” as output.
+Question 10 : Imagine you are working a Java programmer in the ABC Company and write the 
+following program: 
+public class Ques48 
+{public static void main(String[] args) { 
+ Vehicle v = new Car(); 
+ System.out.print(v.getVehicle().getClass().getName() + “ “); 
+ System.out.print(v.getVehicle().getName()); 
+ } 
+} 
+class Vehicle { 
+public Vehicle getVehicle() { 
+return this; 
+} 
+public String getName() { 
+return "Vehicle"; 
+} 
+} 
+class Car extends Vehicle { 
+public Vehicle getVehicle() { 
+return this; 
+} 
+public String getName() { 
+return "Car"; 
+} 
+} 
+What will be the output after you compile and execute the preceding program?
+A. The program will lead to compilation errors as the Car class overloads the getVehicle method by 
+changing its return type. 
+B. The program will compile successfully and display “com.kogent.Car Car” as output.
+C. The program will compile successfully but lead to runtime error.
+D. The program will lead to compilation error at Vehicle v = new Car();
+Exception Handling 
+Q1. What is exception and why use it?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 20 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q2. Explain exception handling hierarchy?
+Q3. Explain benefits of exception handling?
+Q4. Explain types of exception in java?
+Q5. What is diff between exception and error?
+Q6. Explain keyword for exception handling with examples?
+Q7. What is diff between catch and finally block?
+Q8. What is throws keyword in exception handling and why use it?
+Q9. What is throw keyword in exception handling and why use it?
+Q10. What is diff between throws and throw keyword?
+Q11. Explain any 10 exceptions with example?
+Q12. Can we write try without catch block?
+Q12. What is try with resource bundle?
+Q13. Can we write more than one exception in catch block using pipe operator?
+Q14. Can we write try within try block?
+Q15. Can we write multiple catch for single try?
+Q16. Is it true throw and throws throw exception object at function calling point?
+Q17. Is it true throws design for handle checked exception?
+Program on exception handling
+1. Write a code for handle NullPointerException?
+2. Write code for handle ArithmeticException?
+3. Write code for handle ArrayIndexOutOfBoundsException?
+4. Write code for handle StringIndexOutOfBoundsException?
+5. Write code for create user defined excetion?
+6. Write code using throws clause?
+7. Write code for handle ClassCastException?
+8. Write code for handle ClassNotFoundException?
+MCQ on Exception Handling?
+Question 1: Predict the output of following Java program?
+class Main {
+ public static void main(String args[]) {
+ try {
+ throw 10;
+ }
+ catch(int e) {
+ System.out.println("Got the Exception " + e);
+ }
+ }
+}
+Options
+(A) Got the Exception 10
+(B) Got the Exception 0
+(C) Compiler Error
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 21 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Question 2: what will be the output of given code?
+class Test extends Exception { 
+}
+ class Main {
+ public static void main (String args[]) { 
+ try {
+ throw new Test();
+ }
+ catch(Test t) {
+ System.out.println("Got the Test Exception");
+ }
+ finally {
+ System.out.println("Inside finally block ");
+ }
+ }
+}
+Options
+(A) Got the Test Exception
+ Inside finally block 
+(B) Got the Test Exception
+(C) Inside finally block 
+(D) Compiler Error
+Question 3: Output of following Java program?
+class Main
+{ public static void main(String args[]) {
+ int x = 0;
+ int y = 10;
+ int z = y/x;
+ }
+}
+Options 
+(A) Compiler Error
+(B) Compiles and runs fine
+(C) Compiles fine but throws ArithmeticException exception
+Question 4: what will be the output of given code?
+class Test
+{ public static void main (String [] args)
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 22 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ {
+ try
+ {
+ int a = 0;
+ System.out.println ("a = " + a);
+ int b = 20 / a;
+ System.out.println ("b = " + b);
+ }
+ catch(ArithmeticException e) {
+ System.out.println ("Divide by zero error");
+ }
+ finally
+ {
+ System.out.println ("inside the finally block");
+ }
+ }
+}
+Options
+(A) Compile error
+(B) Divide by zero error
+(C) a = 0
+ Divide by zero error
+ Inside the finally block
+(D) a = 0
+(E) Inside the finally block
+Question 5: what will be the output of given code ?
+__________________________________________
+class Test
+{
+ public static void main(String[] args)
+ {
+ try
+ {
+ int a[]= {1, 2, 3, 4};
+ for (int i = 1; i <= 4; i++)
+ {
+ System.out.println ("a[" + i + "]=" + a[i] + "n");
+ }
+ }
+ 
+ catch (Exception e)
+ {
+ System.out.println ("error = " + e);
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 23 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ }
+ 
+ catch (ArrayIndexOutOfBoundsException e)
+ {
+ System.out.println ("ArrayIndexOutOfBoundsException");
+ }
+ }
+}
+Options
+(A) Compiler error
+(B) Run time error
+(C) ArrayIndexOutOfBoundsException
+(D) Error Code is printed
+(E) Array is printed
+Wrapper classes Interview Question
+Q1. What is wrapper classes in java and why use it?
+Q2. Explain type casting and its type?
+Q3. What is implicit type casting and explicit type casting?
+Q4. Explain hierarchy of wrapper classes in java?
+Q5. Explain Number and class and its child classes with its method?
+Q6. What is autoboxing and auto unboxing in wrapper classes?
+Q7. Explain use of xxxValue() method of Number class with example?
+Q8. Explain valueOf() method of Wrapper classes?
+Q9. What is parseXXX() method of Wrapper classes?
+Q10. what is String in java explain in depth?
+Q11. What is meaning of immutable in java?
+Q12. How many ways to create string in java?
+Q13. What is diff between string creation using “ “ and using a new keyword?
+Q14. What is string constant pool ?
+Q15. Explain any 4 constructor of string class constructor?
+Q16. Explain charAt(),length(),indexOf(),substring(),split(),trim(),
+concat(),toUpperCase(),toLowerCase() methods with its syntax, and code examples?
+Q17. State the difference between String in C and String in Java?
+Q18. Can we use string in switch case as choice?
+Q19. Is String thread safe in java?
+Q20. What is StringBuffer and StringBuilder in java?
+Q21. Can we use StringBuffer and StringBuilder using initialization technique?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 24 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q22. What is diff between String ,StringBuffer and StringBuilder in java?
+Q23. Explain append(),delete() and insert() method of String in java?
+Q24. What does the string intern() method do?
+Program on String in java
+Q1. WAP to input string and convert lower case string to upper case without using toUpperCase() 
+method?
+Q2. WAP to input string and reverse the string without using any inbuilt function?
+Q3. WAP to input two strings and compare then without using equals() or compareTo() method ?
+Q4. WAP to input string and separate digit from string and calculate its sum?
+Example: abc123mno456;
+Output:1+2+3+4+5+6 =15
+Q5. WAP to input string and count the words from a string using split() method?
+Q6. WAP to input string and input second string and search second string in first input string using 
+indexOf() method?
+Example: First String: Good Morning India
+ Second string: Morning
+ Output: String found
+Q7. WAP to input string and remove the white spaces from a string?
+Q8. WAP to input string and incrypt like as?
+Example: abcmnoabc
+Output: a2b2c2m1n1c1
+Q9. WAP to input string and reverse word from a string?
+Example: good morning india
+Output: doog gninrom aidni
+Q10 Write a Java program to check whether a given string ends with another string.
+MCQ of string handling
+class MNR 
+{ 
+ void method1(String st , int x)
+ { st = new String("bye"); 
+ x = x+1; 
+ } 
+public static void main(String s[])
+{ String str1 = "hi"; 
+ String str2 = "hi"; 
+ int a = 1; 
+ new MNR().method1(str1, 10); 
+ new MNR().method1(str2, 20); 
+ System.out.println(str1 + " " + str2 + " " + a); 
+ } 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 25 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+}
+MCQ2
+class Ques_64 
+{ public static void main(String s[])
+{ String str1 = "abc"; 
+ String str2 = new String (str1); 
+ String str3 = new String ("abc"); 
+ String str4 = new String ("Abc"); 
+ System.out.print((str1 == str3) + “ “); 
+ System.out.print(str4.equalsIgnoreCase(str1) + “ “); 
+ System.out.print((str2 == str3) + “ “); 
+ System.out.print(str2 == str4); 
+ } 
+}
+MCQ3
+class Ques_66 { 
+public static void main(String args[]) 
+{ if(args.length == 1 | args[1].equals("testing"))
+ { 
+ System.out.println("testing"); 
+ } 
+ else { 
+ System.out.println(args[0]); 
+ } 
+} 
+}
+MCQ4
+class Test { 
+public void sendstring(String s1, StringBuffer s2)
+{ s1 = s1+s2.toString(); 
+ s2.append(s1); 
+ s1 = null; 
+ s2 = null; 
+} 
+public static void main(String [] args) 
+{ String str = "AAA"; 
+ StringBuffer sbr = new StringBuffer("BBB"); 
+ new Test().sendstring(str, sbr); 
+ System.out.print("str=" + str + “ “); 
+ System.out.print("sbr=" +sbr); 
+} 
+}
+MCQ5
+public class Switchtest
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 26 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+{ public static void main(String args[]) { 
+ String str; 
+ String s; 
+ String s1 = new String("i"); 
+ String s2 = new String("j"); 
+ String s3 = new String("k"); 
+ str = s2; 
+ s2 = null;//1 
+ str = s1 + s2 + s3;//2 
+ s1 = null;//3 
+ str = null;//4 
+ s3 = null;//6 
+} 
+}
+MCQ6
+class Ques97 { 
+public static void main(String args[]) { 
+String str1 , str2 , str3; 
+str3 = new String("jim"); 
+str1 = new String("jack"); 
+str2 = str1 ; 
+str1 = new String("jill"); 
+str3 = str2; 
+System.out.println(str3); 
+} 
+}
+MCQ7
+public class StrEqual {
+ public static void main(String[] args) {
+ String s1 = "hello";
+ String s2 = new String("hello");
+ String s3 = "hello";
+ if (s1 == s2) {
+ System.out.println("s1 and s2 equal");
+ } else {
+ System.out.println("s1 and s2 not equal");
+ }
+ if (s1 == s3) {
+ System.out.println("s1 and s3 equal");
+ } else {
+ System.out.println("s1 and s3 not equal");
+ }
+ }
+}
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 27 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+MCQ8
+public class Test {
+ public static void main(String[] args) {
+ String str = null;
+ System.out.println(str.valueOf(10));
+ }
+}
+MCQ9
+public class Test {
+ public static void main(String[] args) {
+ String s = new String("5");
+ System.out.println(1 + 10 + s + 1 + 10);
+ }
+}
+MCQ10
+public class Test {
+ public static void main(String[] args) {
+ String str = null;
+ switch (str) { // #1
+ case "null":
+ System.out.println("null string"); // #2
+ break;
+ }
+ }
+}
+Threading Interview Question
+Q1. What is thread in java?
+Q2. What is multi-threading in java?
+Q3. What is benefit of multi-threading?
+Q4. What is process?
+Q5. What is diff between process and thread?
+Q6. How many ways to create thread in java explain with example?
+Q7. How to create thread in java using Thread class?
+Q8. Explain Thread class all methods?
+Q9. Is it true Runnable contain run() method?
+Q10. Is it true Runnable interface is implemented by Thread class?
+Q11. Is it true Runnable is marker interface ?
+Q12. Explain life cycle of thread?
+Q13. Explain isAlive (), join(),start(),run(),sleep(),stop(),yield(),setPriority(),getPriority(),wait(),notify()
+and notifyAll() methods?
+Q14. What is diff between wait() and sleep () method?
+Q15. What is synchronization and asynchronization in java?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 28 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q16. What is thread priority in java and explain all types of thread priority?
+Q17. What is daemon thread in java?
+Q18. Can we create user thread as daemon thread?
+Q19. Why we need to implement thread using a Runnable interface?
+Q20 Write code for creating thread using Runnable interface?
+Program on Multithreading using JAVA?
+1. WAP to create thread using Thread class and display value from 1 to 10 with delay 10000 
+mili seconds?
+2. WAP to create two threads name Even and Odd and Even thread print even values between
+1 to 10 and Odd thread print odd values between 1 to 10 and use join() methods as well as 
+perform this code using synchronization technique also.
+3. WAP to print the current working thread name and its priority?
+4. WAP to create thread using Runnable interface
+MCQ on Multi-threading in JAVA?
+1. What is multithreaded programming?
+a) It’s a process in which two different processes run simultaneously
+b) It’s a process in which two or more parts of same process run simultaneously
+c) It’s a process in which many different process are able to access same information
+d) It’s a process in which a single process can access information from many sources
+2. Which of these are types of multitasking?
+a) Process based
+b) Thread based
+c) Process and Thread based
+d) none of the mentioned
+3. Thread priority in Java is?
+a) Integer
+b) Float
+c) double
+d) long
+4. What will happen if two thread of the same priority are called to be processed simultaneously?
+a) Anyone will be executed first lexographically
+b) both of them will be executed simultaneously
+c) None of them will be executed
+d) It is dependent on the operating system
+5. Which of these statements is incorrect?
+a) By multithreading CPU idle time is minimized, and we can take maximum use of it
+b) By multitasking CPU idle time is minimized, and we can take maximum use of it
+c) Two thread in Java can have the same priority
+d) A thread can exist only in two states, running and blocked
+6. What will be the output of the following Java code?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 29 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+class multithreaded_programing
+ { public static void main(String args[])
+ { Thread t = Thread.currentThread();
+ System.out.println(t); 
+ }
+ }
+a) Thread[5,main]
+b) Thread[main,5]
+c) Thread[main,0]
+d) Thread[main,5,main]
+7. What is the priority of the thread in the following Java Program?
+class multithreaded_programing 
+ { public static void main(String args[])
+ { Thread t = Thread.currentThread();
+ System.out.println(t); 
+ }
+ }
+a) 4
+b) 5
+c) 0
+d) 1
+8. What is the name of the thread in the following Java Program?
+class multithreaded_programing
+ { public static void main(String args[])
+ { Thread t = Thread.currentThread();
+ System.out.println(t); 
+ }
+ }
+a) main
+b) Thread
+c) System
+d) None of the mentioned
+9.What requires less resources?
+a) Thread
+b) Process
+c) Thread and Process
+d) Neither Thread nor Process
+10. What does not prevent JVM from terminating?
+a) Process
+b) Daemon Thread
+c) User Thread
+d) JVM Thread
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 30 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+11. What decides thread priority?
+a) Process
+b) Process scheduler
+c) Thread
+d) Thread scheduler
+11. Deadlock is a situation when thread is waiting for other thread to release acquired object.
+a) True
+b) False
+12. What is true about threading?
+a) run() method calls start() method and runs the code
+b) run() method creates new thread
+c) run() method can be called directly without start() method being called
+d) start() method creates new thread and calls code written in run() method
+13. Which of the following is a correct constructor for thread?
+a) Thread(Runnable a, String str)
+b) Thread(int priority)
+c) Thread(Runnable a, int priority)
+d) Thread(Runnable a, ThreadGroup t)
+14. Which of the following will ensure the thread will be in running state?
+a) yield()
+b) notify()
+c) wait()
+d) Thread.killThread()
+15. What is the default relation b/w Thread & Runnable?
+A. Thread extends Runnable
+B. Thread implements Runnable
+C. They are not related
+D. None of these
+16. What is the valid range of priority of a thread in Java multi-threading?
+A. 1 to 10
+B. 0 to 10
+C. 0 to 9
+D. 1 to 9
+17. Which is the minimum priority of the Thread?
+A. Thread.LOW_PRIORITY
+B. Thread.MIN_PRIORITY
+C. Thread.NORM_PRIORITY
+D. Thread.MINIMUM_PRIORITY
+18. What is the value of Thread.NORM_PRIORITY?
+A. 1
+B. 5
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 31 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+C. 6
+D. 9
+19. Which of these are types of multitasking?
+A. Process based
+B. Thread based
+C. Process and Thread based
+D. None of the mentioned
+20. We can create thread in java by
+A. implementing Thread
+B. extending Thread
+C. extending Runnable
+D. both b & c
+21. The tasks or job that thread needs to perform is written inside
+A. static block
+B. inner class
+C. Both A & B
+D. run()
+22. Which of these method waits for the thread to terminate?
+A. join()
+B. stop()
+C. sleep()
+D. isAlive()
+23. Which of these method is used to explicitly set the priority of a thread?
+A. set()
+B. make()
+C. setPriority()
+D. makePriority() 
+24. Which of the following method is not used to suspend the execution of a thread?
+A. sleep()
+B. wait()
+C. yield()
+D. join()
+25. What will happen if two thread of the same priority are called to be processed simultaneously?
+A. Anyone will be executed first lexographically
+B. Both of them will be executed simultaneously
+C. None of them will be executed
+D. It is dependent on the operating system
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 32 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+26. What does not prevent JVM from terminating?
+A. Process
+B. User Thread
+C. JVM Thread
+D. Daemon Thread
+27. What is the priority of the thread in the following Java Program?
+class multithreaded_programing
+{
+public static void main(String args[])
+{
+Thread t = Thread.currentThread();
+System.out.println(t);
+}
+}
+A. 0
+B. 1
+C. 4
+D. 5
+28. Assume the following method is properly synchronized and called from a thread A on an object 
+B:
+wait(2000);
+After calling this method, when will the thread A become a candidate to get another turn at the 
+CPU?
+A. Two seconds after thread A is notified
+B. Two seconds after lock B is released
+C. After thread A is notified or after two seconds.
+D. After the lock on B is released or after two seconds.
+Ans: C
+29. Which function of pre defined class Thread is used to check weather current thread being 
+checked is still running?
+A. Join()
+B. Alive()
+C. isAlive()
+D. isRunning()
+Ans: C
+30. What is true about time slicing?
+A. Time slicing allocates more resources to thread
+B. Time slicing depends on its implementation in OS
+C. Time slicing is OS service that allocates CPU time to available runnable thread
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 33 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+D. Time slicing is the process to divide the available CPU time to available runnable thread
+Ans: D
+IOStreams
+Q1. what is streams in java and why use it?
+Q2. how to many ways to work with file in java?
+Q3. Explain File class from java.io package?
+Q4. Explain how to get all drive names, total space of drive, free space of drive etc?
+Q5. Explain Hierarchy of OutputStream class?
+Q6. Explain Hierarchy of Writer class?
+Q7. Explain Methods of Writer class?
+Q8. Explain Methods of OutputStream class?
+Q9. Explain FileWriter class with its constructor and write code for storing data in .txt file?
+Q10. Explain BufferedWriter class with example?
+Q11. what is diff between FileWriter and BufferedWriter class?
+Q12. Explain FileReader and BufferedReader with example?
+Q13. Explain ObjectOutputStream class?
+Q14. Explain ObjectInputStream class?
+Q15. what is Serialization and Deserialization in JAVA?
+Q16. Write code for serialization and deserialization in java?
+Q17. Write code for reading .csv files in java?
+Practice program on File Handling in JAVA?
+Q1. Write a program to print all drives from your system and with its total space and free space?
+Q2. Write program to create folder using File class and if folder is already present then show 
+message folder is present?
+Q3. Write program to create file using File class and if file is present then show message file is exist 
+and if file path is not found then handle exception at run time?
+Q4. Read all folders from Drive d: and display it?
+Q5. Read all files from D drive?
+Q6. Create file using a BufferedWriter class and store string data in it?
+Q7. WAP to read file using a BufferedReader class and display it?
+Q8. WAP to read file using BufferedReader and count its number of word in file, count number of 
+character in file and count vowels and consent from file?
+Q9. WAP to read file using a BufferedReader and reverse the every word from file and store in 
+another file?
+Q10. WAP to read file using BufferedReader class and find the words whose ending with ing word 
+and store in another file?
+Q11. WAP to copy the image from D: drive and paste it on E drive?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 34 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+MCQ Question on File Handling?
+Q1. Which of this exception is thrown in cases when the file specified for writing is not found?
+a) IOException
+b) FileException
+c) FileNotFoundException
+d) FileInputException
+Ans :C
+Q2.Which of these methods are used to read in from file?
+a) get()
+b) read()
+c) scan()
+d) readFileInput()
+Ans : b
+Q3.Which of these values is returned by read() method is end of file (EOF) is encountered?
+a) 0
+b) 1
+c) -1
+d) Null
+Ans: c
+Q4. Which of these exception is thrown by close() and read() methods?
+a) IOException
+b) FileException
+c) FileNotFoundException
+d) FileInputOutputException
+Ans: a
+Q5. Which of these methods is used to write() into a file?
+a) put ()
+b) putFile()
+c) write()
+d) writeFile()
+Q6.What will be the output of the following Java program?
+ import java.io.*;
+ class filesinputoutput
+ {
+ public static void main (String args[])
+ { InputStream obj = new FileInputStream ("inputoutput.java");
+ System.out.print (obj.available ());
+ }
+ }
+a) true
+b) false
+c) prints number of bytes in file
+d) prints number of characters in the file
+Ans: c
+Q7.What will be the output of the following Java program?
+import java.io.*;
+ public class filesinputoutput
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 35 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ {
+ public static void main(String[] args)
+ {
+ String obj = "abc";
+ byte b[] = obj.getBytes();
+ ByteArrayInputStream obj1 = new ByteArrayInputStream(b);
+ for (int i = 0; i < 2; ++ i)
+ {
+ int c;
+ while((c = obj1.read()) != -1)
+ {
+ if(i == 0)
+ {
+ System.out.print(Character.toUpperCase((char)c));
+ obj2.write(1); 
+ }
+ }
+ System.out.print(obj2);
+ }
+ }
+ }
+a) AaBaCa
+b) ABCaaa
+c) AaaBaaCaa
+d) AaBaaCaaa
+Ans: d
+Q8. What will be the output of the following Java program?
+ import java.io.*;
+ class Chararrayinput
+ { public static void main(String[] args)
+ { String obj = "abcdef";
+ int length = obj.length();
+ char c[] = new char[length];
+ obj.getChars(0, length, c, 0);
+ CharArrayReader input1 = new CharArrayReader(c);
+ CharArrayReader input2 = new CharArrayReader(c, 0, 3);
+ int i;
+ try
+ {
+while((i = input2.read()) != -1)
+ {
+ System.out.print((char)i);
+ }
+ } 
+ catch (IOException e)
+ {
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 36 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ e.printStackTrace();
+ }
+}
+ }
+a) abc
+b) abcd
+c) abcde
+d) abcdef
+Ans: a
+Q9. What will be the output of the following Java program?
+import java.io.*;
+ class Chararrayinput
+ {
+ public static void main(String[] args)
+ {
+ String obj = "abcdefgh";
+ int length = obj.length();
+ char c[] = new char[length];
+ obj.getChars(0, length, c, 0);
+ CharArrayReader input1 = new CharArrayReader(c);
+ CharArrayReader input2 = new CharArrayReader(c, 1, 4);
+ int i;
+ int j;
+ try 
+ {
+while((i = input1.read()) == (j = input2.read()))
+ {
+ System.out.print((char)i);
+ }
+ } 
+ catch (IOException e)
+ {
+ e.printStackTrace();
+ }
+}
+ }
+a) abc
+b) abcd
+c) abcde
+d) none of the mentioned
+Ans: d
+Q10. Which method is used to write an array of byte to the current output stream?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 37 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+A. public void write(int)throws IOException
+B. public void write(byte[])throws IOException
+C. public void flush()throws IOException
+D. public void close()throws IOException
+Ans: B
+Q11. Which of this class is not a member class of java.io package?
+A. File
+B. StringReader
+C. Writer
+D. String
+Ans: D
+Collection Framework 
+Q1. What is Collection and why use Collection Framework explain with 5 reason?
+Q2. What are benefit of Collection over array?
+Q3. Explain Collection Hierarchy?
+Q4. Explain Iterable interface in java with its method?
+Q5. What is Collection interface and explain all methods of Collection interface?
+Q6. Explain add() method, Boolean contain() method,indexOf() method,size(),Boolean
+isEmpty(),remove(),iterator() method etc
+Q7. Explain types of Collection like as List,Set and Queue interface?
+Q8. What is diff between List an Set interface?
+Q9. What is diff between List and Queue interface?
+Q10. Explain all implementer classes of Collection framework?
+Q11. Explain Vector class with its constructor?
+Q12. Explain any 5 important points of Vector class?
+Q12. Is it true Vector is synchronized collection and explain its reason?
+Q13. Is it true vector is legacy collection?
+Q14. What is legacy collection in java?
+Q15. What is default capacity of Vector?
+Q16. Is it true Vector occupy double memory than its current capacity?
+Q17. Explain logic of Vector double capacity increment?
+Q18. What is diff between Vector and ArrayList?
+Q19. What is default capacity of Vector and ArrayList collection?
+Q20. How ArrayList increase its capacity when capacity cross?
+Q21. What is diff between LinkedList and ArrayList?
+Q22. What is time complexity of LinkedList?
+Q23. What is time complexity of ArrayList?
+Q24. Who is better for element deletion or updation between LinkedList and ArrayList?
+Q25. Who is better for data fetching or data retrieval between LinkedList and ArrayList?
+Q26. What is threads hold value of Vector?
+Q27. Explain stack in depth?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 38 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q28. What is HashSet Collection in java?
+Q29. What is LinkedHashSet in java?
+Q30. What is diff between HashSet and LinkedHashSet in java?
+Q31. How many ways to fetch data from Collection?
+Q32. Explain Iterator in depth with example?
+Q33. Explain ListIterator in depth with example?
+Q34. Explain diff between Iterator and ListIterator?
+Q35. Explain Enumeration interface with example?
+Q36. What is diff between Enumeration and Iterator?
+Q37. How to remove duplicated data from List Collection?
+Q38. What is enhance for loop and how to fetch data from collection using Enhance for loop?
+Q39. What meaning of TreeSet and explain with example?
+Q40. How to travel TreeSet in descending order?
+Program for Practice?
+Q1. WAP to create Vector and store 5 values in it and fetch it using Iterator, ListIterator,
+Enumeration and enhance for loop?
+Q2. WAP to create Vector and store 5 values in it and arrange all values in ascending order without
+using Collections.sort() method?
+Q3. WAP to create Vector and store 5 values in it and find max and min value from collection 
+without using any inbuilt method?
+Q4. WAP to create ArrayList and store 10 values in it and find occurrence of every value in ArrayList?
+Q5. WAP to create LinkedList and store 10 values in it and search particular value from LinkedList?
+Q6.WAP to create ArrayList and store 5 employee objects in it and display it?
+Q7. WAP to create ArrayList and store 5 player detail in it with id,name and run and search player 
+record using its id.
+Q8. WAP to create HashSet and store 10 value in it and display it 
+Q9. WAP to create LinkedHashSet and store 5 employee data in it and display it ?
+Q10. WAP to create TreeSet and store 10 values in it and display it?
+Interview Question on Map interface in java?
+________________________________________________________________
+Q1. What is Map?
+Q2. Explain Hierarchy of Map interface?
+Q3. Explain any 8 methods of Map interface?
+Q4. Explain HashMap in depth?
+Q5. Explain LinkedHashMap in depth?
+Q6. What is diff between HashMap and LinkedHashMap interface?
+Q7. What is NavigableMap interface?
+Q8. What default load factory of HashMap in java?
+Q9. Explain internal working of HashMap?
+Q10. Explain Map.Entry in java?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 39 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q12. Explain TreeMap with example?
+Practice program using Map 
+1. WAP to create HashMap and store 5 values in it and display it using entrySet() method?
+2. WAP to create LinkedHashMap and store 5 values in it and display it?
+3. WAP to manage the map as per given diagram means you have to create LinkedHashMap 
+where you have to store country name as key and number of player as value 
+4. WAP to manage the map as per given diagram means you have to manage Map within Map 
+mention country name as key and player id and player name as value shown in following 
+diagram
+Output
+India team player list 
+ ID Name
+1 RAM
+2 SHYAM
+3 GANESH
+Aus team player list
+ ID Name
+1 Steve
+2 Finch
+3 Warnar
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 40 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+5. WAP to create Map mark employee Dept name as key and Employee details as Values 
+means single dept contain multiple employees and store 2 dept and every dept contain 3 
+employee and display its data 
+Output of above program look like as 
+Employee List from DEVELOPER 
+ID Name Salary
+1 ABC 10000
+2 MNO 20000
+3 PQR 30000
+Employee List from TESTER
+1 RAM 10000
+2 SHYAM 20000
+3 GANESH 30000
+6. WAP to create array of size 10 and store value in it and find the occurrence of every element 
+using LinkedHashMap
+7. WAP to create input string and split its word and find the repetitive word in string using 
+LinkedHashMap
+8. WAP to input string and find occurrence of every character using LinkedHashMap?
+MCQ Question on Map Collection
+1. Which of these object stores association between keys and values?
+a) Hash table
+b) Map
+c) Array
+d) String
+2. Which of these classes provide implementation of map interface?
+a) ArrayList
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 41 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+b) HashMap
+c) LinkedList
+d) DynamicList
+3. Which of these method is used to remove all keys/values pair from the invoking map?
+a) delete()
+b) remove()
+c) clear()
+d) removeAll()
+4. Which of these method Map class is used to obtain an element in the map having specified key?
+a) search()
+b) get()
+c) set()
+d) look()
+5. Which of these methods can be used to obtain set of all keys in a map?
+a) getAll()
+b) getKeys()
+c) keyall()
+d) keySet()
+6. Which of these method is used add an element and corresponding key to a map?
+a) put()
+b) set()
+c) redo()
+d) add()
+7. What will be the output of the following Java program? import java.util.*;
+ class Maps 
+ { public static void main(String args[]) {
+ HashMap obj = new HashMap();
+ obj.put("A", new Integer(1));
+ obj.put("B", new Integer(2));
+ obj.put("C", new Integer(3));
+ System.out.println(obj);
+ }
+ }
+a) {A 1, B 1, C 1}
+b) {A, B, C}
+c) {A-1, B-1, C-1}
+d) {A=1, B=2, C=3}
+8. What will be the output of the following Java program?
+import java.util.*;
+ class Maps 
+ { public static void main(String args[]) {
+ HashMap obj = new HashMap();
+ obj.put("A", new Integer(1));
+ obj.put("B", new Integer(2));
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 42 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ obj.put("C", new Integer(3));
+ System.out.println(obj.keySet());
+ }
+ }
+a) [A, B, C]
+b) {A, B, C}
+c) {1, 2, 3}
+d) [1, 2, 3]
+9. What will be the output of the following Java program?
+import java.util.*;
+ class Maps 
+ {
+ public static void main(String args[]) 
+ {
+ HashMap obj = new HashMap();
+ obj.put("A", new Integer(1));
+ obj.put("B", new Integer(2));
+ obj.put("C", new Integer(3));
+ System.out.println(obj.get("B"));
+ }
+ }
+a) 1
+b) 2
+c) 3
+d) null
+10. What will be the output of the following Java program?
+import java.util.*;
+ class Maps 
+ { public static void main(String args[]) 
+ { TreeMap obj = new TreeMap();
+ obj.put("A", new Integer(1));
+ obj.put("B", new Integer(2));
+ obj.put("C", new Integer(3));
+ System.out.println(obj.entrySet());
+ }
+ }
+a) [A, B, C]
+b) [1, 2, 3]
+c) {A=1, B=2, C=3}
+d) [A=1, B=2, C=3]
+11. what will be output of given code?
+import java.util.*;
+import java.util.Map.*;
+public class Participate {
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 43 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ public static void main(String args[]) {
+ HashMap participant = new HashMap();
+ participant.put(1 + 1, "Samantha");
+ participant.put(0 + 1, "Kiran");
+ participant.put(2 + 1, "Anushka");
+ Set set = participant.entrySet();
+ Iterator itr = set.iterator();
+ while (itr.hasNext()) {
+ Map.Entry m = (Entry) itr.next();
+ System.out.print(m.getKey() + " " + m.getValue() + ", ");
+ }
+ System.out.println();
+ itr = set.iterator();
+ while (itr.hasNext()) {
+ Map.Entry m = (Map.Entry) itr.next();
+ System.out.print(m.getKey() + " " + m.getValue() + ", ");
+ }
+ }
+Q12. Write a program to find keys with common values in the given maps.
+Input (Map, Map) Output (Set)
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [A=>Ant, 
+B=>Ball, C=>Cat, 
+G=>Gun, I=>Ink, 
+M=>Moon]
+[B, C, G]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], 
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat]
+[A, B, C, G, I, K, M]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], 
+[A=>Apple, B=>Box, 
+C=>Cat, I=>Ink]
+[A, C]
+[A=>Apple, C=>Cat, []
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 44 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+I=>Ice, M=>Mat], 
+[B=>Ball, G=>Gun, 
+K=>Kite, N=>Net]
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+class FindKeysWithCommonValues
+{
+ public static void main(String s[])
+ {
+ Map<String, String> map1 = new HashMap<String, String>();
+ map1.put("A", "Apple");
+ map1.put("B", "Ball");
+ map1.put("C", "Cat");
+ map1.put("G", "Gun");
+ map1.put("I", "Ice");
+ map1.put("K", "Kite");
+ map1.put("M", "Mat");
+ Map<String, String> map2 = new HashMap<String, String>();
+ map2.put("A", "Ant");
+ map2.put("B", "Ball");
+ map2.put("C", "Cat");
+ map2.put("G", "Gun");
+ map2.put("I", "Ink");
+ map2.put("M", "Moon");
+ System.out.println("The set of keys with common values are 
+" + findKeysWithCommonValues(map1, map2));
+ }
+public static Set<String> findKeysWithCommonValues(Map<String, String> map1, Map<String, 
+String> map2)
+{ Write a code here to find keys with common values. 
+}
+}
+Q13. Write a program to find common values in the given maps?
+Input (Map, Map) Output (Set)
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [A=>Ant, 
+B=>Ball, C=>Cat, 
+G=>Gun, I=>Ink, 
+[Ball, Cat, Gun]
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 45 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+M=>Moon]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [A=>Apple, 
+B=>Ball, C=>Cat, 
+G=>Gun, I=>Ice, 
+K=>Kite, M=>Mat]
+[Apple, Ball, Cat, Gun, Ice, Kite, Mat]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [A=>Apple, 
+Z=>Ball, K=>Cat, 
+I=>Ink]
+[Apple, Ball, Cat]
+[A=>Apple, C=>Cat, 
+I=>Ice, M=>Mat], 
+[B=>Ball, G=>Gun, 
+K=>Kite, N=>Ice]
+[Ice]
+[A=>Ball, B=>Ant, 
+C=>Gun, G=>Cat, 
+I=>Kite, K=>Ice, 
+M=>Mat], [A=>Gun, 
+B=>Ball, C=>Cat, 
+G=>Gun, I=>Ice, 
+M=>Moon]
+[Gun, Ball, Cat, Ice]
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+class FindCommonValuesInMaps
+{
+ public static void main(String s[])
+ {
+ Map<String, String> map1 = new HashMap<String, String>();
+ map1.put("A", "Apple");
+ map1.put("B", "Ball");
+ map1.put("C", "Cat");
+ map1.put("G", "Gun");
+ map1.put("I", "Ice");
+ map1.put("K", "Kite");
+ map1.put("M", "Mat");
+ Map<String, String> map2 = new HashMap<String, String>();
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 46 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+ map2.put("A", "Ant");
+ map2.put("B", "Ball");
+ map2.put("C", "Cat");
+ map2.put("G", "Gun");
+ map2.put("I", "Ink");
+ map2.put("M", "Moon");
+ System.out.println("The set of keys with common values are 
+" + findCommonValues(map1, map2));
+ }
+public static Set<String> findCommonValues(Map<String, String> map1, Map<String, String> map2)
+ { Write a code here to find the common values in the given maps
+ }
+}
+Q14. Write a program to identify those keys which are present only in the first map?
+Input (Map, Map) Output (Set)
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [B=>Ball, 
+C=>Cat, I=>Ink, 
+M=>Moon]
+[A, G, K]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], [A=>Ant, 
+B=>Box, C=>Cat, 
+G=>Girl, I=>Ink]
+[K, M]
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat], 
+[A=>Apple, B=>Ball, 
+C=>Cat, G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat]
+[]
+[A=>Apple, B=>Ball, 
+C=>Cat], [G=>Gun, 
+I=>Ice, K=>Kite, 
+M=>Mat]
+[A, B, C]
+[B=>Ball, G=>Gun, 
+K=>Kite], [A=>Apple, 
+[]
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 47 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+B=>Ball, C=>Cat, 
+G=>Gun, I=>Ice, 
+K=>Kite, M=>Mat]
+import java.util.*;
+class IdentifyFirstMapOnlyKeys
+{
+ public static void main(String s[])
+ {
+ Map<String, String> map1 = new HashMap<String, String>();
+ map1.put("A", "Apple");
+ map1.put("B", "Ball");
+ map1.put("C", "Cat");
+ map1.put("G", "Gun");
+ map1.put("I", "Ice");
+ map1.put("K", "Kite");
+ map1.put("M", "Mat");
+ Map<String, String> map2 = new HashMap<String, String>();
+ map2.put("B", "Ball");
+ map2.put("C", "Cat");
+ map2.put("I", "Ink");
+ map2.put("M", "Moon");
+ System.out.println("The set of keys which are present only in the first map are 
+" + findKeysPresentOnlyInFirstMap(map1, map2));
+ }
+public static Set<String> findKeysPresentOnlyInFirstMap(Map<String, String> map1, Map<String, 
+String> map2) 
+{ Write code here to find those keys which are present only in the first map
+ }
+}
+Q15. Write a program to copy details from one hash map to another, only if the first map does not 
+have that value.
+Input (HashMap, 
+HashMap)
+Output (HashMap)
+{key4=>"Hello", 
+key3=>"are", 
+key7=>"."}, 
+{key5=>"how", 
+key6=>"are", 
+key2=>"you"}
+{key4=>"Hello", key3=>"are", key7=>".", 
+key5=>"how", key2=>"you"}
+{key4=>"Do", 
+key3=>"not", 
+{key4=>"Do", key3=>"not", key6=>"stupid", 
+key2=>"me", key1=>"play", key8=>"with", 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 48 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+key6=>"stupid", 
+key2=>"me"}, 
+{key1=>"play", 
+key8=>"with", 
+key7=>"not", 
+key9=>"it"}
+key9=>"it"}
+{key4=>"Do", 
+key3=>"so", 
+key6=>"open", 
+key2=>"brains", 
+key2=>"Your", 
+key1=>"fall"}, 
+{key8=>"not", 
+key7=>"be", 
+key9=>"out", 
+key19=>"minded", 
+key29=>"brains"}
+{key4=>"Do", key3=>"so", key6=>"open", 
+key2=>"brains", key2=>"Your", key1=>"fall", 
+key8=>"not", key7=>"be", key9=>"out", 
+key19=>"minded"}
+{key10=>"Fun", 
+key3=>"there", 
+key6=>"fair", 
+key2=>"set"}, 
+{key1=>"up", 
+key8=>"there", 
+key7=>".", 
+key9=>"up"}
+{key10=>"Fun", key3=>"there", key6=>"fair", 
+key2=>"set", key1=>"up", key7=>"."}
+class CopyMapIfValueDoesNotExist
+{ public static void main(String s[])
+ {
+ Map inputMap1 = new HashMap();
+ inputMap1.put("key11", "Hai");
+ inputMap1.put("key12", "how");
+ inputMap1.put("key13", "you");
+ inputMap1.put("key14", ".");
+ Map inputMap2 = new HashMap();
+ inputMap2.put("key21", "are");
+ inputMap2.put("key22", "how");
+ inputMap2.put("key23", "friend");
+ inputMap2.put("key24", ".");
+ inputMap2.put("key25", "Hello");
+ System.out.println("The resultant map is : " + copyMap(inputMap1, inputMap2));
+ }
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 49 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+public static Map<String, String> copyMap(Map<String, String> inputMap1, Map<String, String> 
+inputMap2) {
+//Write code here to copy details from one hash map to another, only if the first map does not have 
+that value
+}
+}
+Interview Question on Collections class , Object class and Generics class
+Q1. What is Collections class and why use it?
+Q2. What is diff between Collections and Collection?
+Q3. Explain any 5 method of Collections classs?
+Q4. What is Comparable interface in java and why use it?
+Q5. What is Comparator interface in java and why use it?
+Q6. What is diff between Comparator and Comparable interface?
+Q7. What is Generics and why use generics?
+Q8. Explain types of Generics in java?
+Q9. What is wild card generics?
+Q10. What bounded and unbounded generics in java?
+Q11. What Object and why Object class is parent of every class in java?
+Q12. Explain equals() and hashcode() method of Object class?
+Q13. Explain toString(),notify(),notifyAll(),finalize(),static{} block etc in java?
+Q14. Explain diff between static and instance block in java?
+Q15 How to create user defined class as generics class 
+Q16. How to create user define interface as generic interfaces?
+Q17. What is marker interface in java?
+Q18. Explain volatile,transient,assert in java?
+Q19. What is object cloning and how to perform object cloning in java?
+Q20. What is shadow copy and deep copy in object cloning?
+Practice Program on Collections,Generics and Object class
+Q1. Write a program to create ArrayList and store 5 values in it and arrange all element in ascending 
+order using Collections.sort() method ,reverse all values using Collections.reverse(),find max value 
+from Collections.mar() value etc
+Q2. WAP to create Employee class with field id, name and salary and sort employee data using its id 
+using Comparable interface
+Q3. WAP to create Employee class with field id,name and salary and sort employee data using 
+following terms 
+Case1: sort employee data by using id 
+Case 2:sort employee data by using salary
+Q4. WAP to create Employee class with field id,name and salary and compare two employee with 
+each other using equals() method and generate same hashcode if two employee objects are same 
+otherwise generate different hashcode?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 50 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+Q5. WAP to create Employee class with id,name and salary and override toString() method in it?
+Q6. WAP to create Employee class with id,name and salary and perform object cloning on it?
+Q7. WAP to demonstrate finalize() method?
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 51 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
+GIRI’S TECH HUB PVT.LTD -PUNE -9175444433 , 9049361265
+pg. 52 Visit: http://techhubindia.org Download APP: GIRI’S TECH HUB 
