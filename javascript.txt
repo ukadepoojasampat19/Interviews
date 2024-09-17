@@ -372,3 +372,54 @@ fetchDataAsync("https://api.example.com/data")
 await response.json(): This line waits for the response.json() method to parse the response body into a JSON object.
 return data;: Once both fetch and response.json() have completed successfully, the data (the parsed JSON object) is returned from the fetchDataAsync function.
 Only after both steps have completed successfully will the Promise returned by fetchDataAsync resolve, and the subsequent .then() block will execute.
+
+
+So, to summarize:
+
+The fetch request is added to the network queue.
+The browser receives the response and starts processing it.
+The response.json() method is added to the event queue.
+The JavaScript engine waits for the response.json() method to finish parsing the data.
+Once the parsing is complete, the Promise returned by fetchDataAsync resolves, and the subsequent .then() block executes.
+
+Q: what is evenet loop?
+->
+Synchronous code: This is the code that is executed in a linear fashion, line by line.
+Asynchronous operations: These are tasks that don't block the main thread, such as network requests, timers, or I/O operations. They are added to the event queue.
+Event loop: The event loop continuously checks the event queue for tasks to execute. When a task is ready (e.g., a network request has completed or a timer has expired), the event loop takes it from the queue and executes it.
+Key points:
+
+Synchronous code is executed immediately.
+Asynchronous operations are added to the event queue and executed when they're ready.
+The event loop manages both synchronous and asynchronous tasks.
+console.log('Before the timeout');
+
+setTimeout(() => {
+  console.log('Inside the timeout');
+}, 1000);
+
+console.log('After the timeout');
+
+
+Q: how evenet loop manages both the sunchronous and asyncronous operation?
+->How the Event Loop Manages Both
+Synchronous execution: The event loop starts by executing synchronous tasks in the order they are encountered.
+Asynchronous tasks: When an asynchronous task is encountered, it's added to the event queue and the execution continues in the current function.
+Event loop processing: The event loop continuously checks the event queue for tasks to execute.
+Callback execution: When an asynchronous task completes, its callback function is added to the event queue. The event loop eventually processes the callback, pushing it onto the call stack.
+Synchronous continuation: The callback function is executed, and the event loop continues processing tasks in the queue.
+
+Callback Functions
+A callback function is a function that is passed as an argument to another function and is executed at a later time, often after an asynchronous operation completes. It's a common pattern in JavaScript for handling asynchronous tasks. 
+
+The event queue is a data structure where asynchronous operations, such as callbacks, timeouts, and network requests, are stored. The event loop continuously checks the event queue for tasks to execute, and when a task is ready, it's taken from the queue and executed.
+
+
+Synchronous and Asynchronous Operations
+Synchronous operations are executed in a linear fashion, one after another. They block the execution of subsequent code until they are completed.
+Asynchronous operations do not block the main thread and can be executed concurrently with other tasks. They are typically handled by the event loop.
+
+
+Promises
+A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises provide a cleaner way to handle asynchronous operations compared to callbacks.   
+when the promise is true then the callback associted with it get call;
