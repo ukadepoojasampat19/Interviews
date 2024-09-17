@@ -1,0 +1,71 @@
+## Interview Questions for a Software Development Engineer Role
+
+### Technical Skills
+
+**Core Programming:**
+
+* **Data Structures and Algorithms:**
+  * Can you explain the difference between a stack and a queue?
+  * How would you implement a linked list?
+  * What is the time complexity of a bubble sort algorithm?
+* **Object-Oriented Programming (OOP):**
+  * What are the four pillars of OOP (inheritance, polymorphism, encapsulation, abstraction)?
+  * Can you explain the concept of interfaces and abstract classes?
+  * How do you implement inheritance in JavaScript?
+* **JavaScript:**
+  * What is the difference between `let`, `var`, and `const`?
+  * Explain the concept of hoisting in JavaScript.
+  * How do you handle asynchronous operations in JavaScript (callbacks, Promises, async/await)?
+
+**Frontend Development (React/React Native):**
+
+* **React Components:**
+  * What is a React component, and how do you create one?
+  * Explain the concept of state and props in React.
+  * How do you handle events in React?
+* **React Hooks:**
+  * What are hooks in React, and why are they used?
+  * Explain the use of `useState` and `useEffect` hooks.
+  * How do you manage state and side effects effectively using hooks?
+* **React Native:**
+  * What are the key differences between React and React Native?
+  * How do you handle navigation and routing in React Native?
+  * What are some common performance optimization techniques for React Native apps?
+
+**Backend Development (.NET):**
+
+* **C# Fundamentals:**
+  * What are the key differences between value types and reference types in C#?
+  * Explain the concept of delegates and events.
+  * How do you implement polymorphism in C#?
+* **.NET Framework/Core:**
+  * What are the main differences between the .NET Framework and .NET Core?
+  * What is the role of the Common Language Runtime (CLR)?
+  * Explain the concept of assemblies and namespaces.
+
+**Cloud Development:**
+
+* **AWS Basics:**
+  * What are the different services offered by AWS?
+  * How would you deploy a web application on AWS?
+  * Explain the concept of serverless computing and its benefits.
+* **Cloud Architecture:**
+  * How do you design scalable and fault-tolerant cloud architectures?
+  * What are some common cloud design patterns?
+* **Cloud Security:**
+  * What are the key security considerations when developing cloud applications?
+  * How do you protect sensitive data in the cloud?
+
+### Soft Skills
+
+* **Communication:**
+  * How do you communicate effectively with both technical and non-technical teams?
+  * Can you describe a time when you had to explain a complex technical concept to a non-technical audience?
+* **Problem-solving:**
+  * How do you approach solving complex technical problems?
+  * Can you describe a time when you had to troubleshoot a difficult issue?
+* **Teamwork:**
+  * How do you collaborate effectively with team members?
+  * Can you share an experience where you worked successfully in a team?
+
+By preparing for these questions and practicing your responses, you can increase your chances of success in your interview for the Software Development Engineer role.
