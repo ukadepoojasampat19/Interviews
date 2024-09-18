@@ -6,16 +6,178 @@
 
 * **Data Structures and Algorithms:**
   * Can you explain the difference between a stack and a queue?
+  ->
+  Both stacks and queues are linear data structures, but they differ in how elements are accessed:
+  Stack: Follows the LIFO (Last In, First Out) principle. The last element added is the first to be removed.
+  eg : n everyday analogy would be a stack of plates—where you add a plate on top and remove the top one when needed.
+  Queue: Follows the FIFO (First In, First Out) principle. The first element added is the first to be removed.
+   real-world analogy for a queue would be a line at a movie theater, where the first person in line is the first one to get the ticket.
+
+
   * How would you implement a linked list?
+  ->
+  A linked list is a linear data structure where elements, called nodes, are linked together using pointers. Unlike arrays, linked lists do not store data in contiguous memory locations; instead, each node points to the next node in the sequence.
+
+  Types of Linked Lists:
+Singly Linked List: Each node points to the next node. Traversal is one-way (forward).
+Doubly Linked List: Each node points to both the next and the previous node. Traversal can be done in both directions (forward and backward).
+Circular Linked List: The last node points back to the first node, forming a circle. This can be singly or doubly linked
+
+Types of Linked Lists:
+Singly Linked List: Each node points to the next node. Traversal is one-way (forward).
+Doubly Linked List: Each node points to both the next and the previous node. Traversal can be done in both directions (forward and backward).
+Circular Linked List: The last node points back to the first node, forming a circle. This can be singly or doubly linked.
+Basic Operations:
+Insertion: Adding a node at the beginning, end, or any position in the list.
+Deletion: Removing a node from the list.
+Traversal: Going through the nodes one by one to access or print data.
+Searching: Finding a specific node based on its value
+
+ * whic is better array or linkedlist?
+ ->
+ arrays are better when fast, random access and efficient memory usage are critical, while linked lists are better when dynamic memory and frequent insertions/deletions are needed.
+ Array :
+ Arrays use contiguous memory allocation.
+The size of the array is fixed once it is declared.
+This can lead to either wasted space (if the array is underutilized) or memory overflow (if the array needs more space).
+
+Linked List:
+Linked lists use dynamic memory allocation. Each node is stored separately in memory.
+They can grow or shrink in size as needed.
+However, each node in a linked list requires extra memory for storing the pointer/reference to the next node.
+
+
+
   * What is the time complexity of a bubble sort algorithm?
+  ->general case it sis o(n^2)
+    but if the array is completly sorted the time complexity will be o(n).
+    eg: 
+    bool flag = false;
+    for(int i=0;i<n;i++)
+    {
+      for(int j=i+1;j<n;j++)
+      {
+         if(arr[i] > arr[j])
+         {
+            flag = true;
+         }
+      }
+      if(flag == false) break;
+    }
+    //in the above case the time complexity will be o(n)
+
 * **Object-Oriented Programming (OOP):**
   * What are the four pillars of OOP (inheritance, polymorphism, encapsulation, abstraction)?
+  ->
+    Inheritance means acquire properties from parent class as well as add new property in child class called as inheritance.
+    Polymorphism : one object behaves differently in different suitation as per the requirment.
+    encapusation :bind the data (variables) and methods working on a same data together in a single unit called class.(it means at implementaion level the data is hide)
+    key concepts:
+    data hiding: data is hide at implementation level
+    access control : private, protected.
+
+    key benefits:
+    1)reusability of a code
+    2)data security flexibility
+    
+    example :public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("Age cannot be negative.");
+        }
+    }
+}
+In this example, the Person class encapsulates the name and age data members, and provides public methods to access and modify them. The setAge method includes a check to ensure that the age is not negative, demonstrating how encapsulation can be used to enforce data integrity.
+
+    
+    abstraction : means at design level the the data is hide
+    (PENDING) 
   * Can you explain the concept of interfaces and abstract classes?
+  ->
+  Interfaces
+
+Definition: An interface is a blueprint of a class that specifies the methods that a class must implement without providing any implementation details. It acts as a contract that classes must adhere to.
+Key characteristics:
+Interfaces can only contain method declarations, not method bodies.
+Interfaces cannot have instance variables.
+Classes can implement multiple interfaces
+interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+
+Abstract Classes
+
+Definition: An abstract class is a class that cannot be instantiated directly. It can contain both abstract methods (methods without a body) and concrete methods (methods with a body).
+
+Key characteristics:
+Abstract classes can have instance variables.
+Subclasses must provide implementations for all abstract methods inherited from the abstract class.
+Abstract classes can have concrete methods.
+abstract class Shape {
+    abstract void draw();
+
+    public void print() {
+        System.out.println("Printing a shape.");
+    }
+}
+
+class Circle extends Shape {
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+class Rectangle extends Shape {
+    public void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+both interfaces and abstract classes are powerful tools for creating reusable and maintainable code. Interfaces are suitable for defining contracts between unrelated classes, while abstract classes are useful for providing a common base for related classes.
+
+
   * How do you implement inheritance in JavaScript?
 * **JavaScript:**
   * What is the difference between `let`, `var`, and `const`?
+  -> let and const have block level scope and var has function level scope
+
   * Explain the concept of hoisting in JavaScript.
+  -> 
+  referencing a varibale before it declaration means hoisting in javascript;
+  for var : it will give us the undefine value
+  and for let and const it will give us the reference error.
+
   * How do you handle asynchronous operations in JavaScript (callbacks, Promises, async/await)?
+  ->
 
 **Frontend Development (React/React Native):**
 

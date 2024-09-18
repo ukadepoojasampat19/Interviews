@@ -578,7 +578,7 @@ You can use .catch() to handle errors that might occur during the request.
 **************************************************************************************************************
 
 5. How can you optimize API requests for performance?
-
+defination : API stands for Application Programming Interface. It's essentially a set of rules or protocols that allows different software applications to communicate with each other
 Minimize the amount of data transferred.
 Use HTTP caching.
 Consider using websockets for real-time updates.
@@ -587,7 +587,7 @@ Consider using websockets for real-time updates.
 5. How can you optimize API requests for performance?
 
 Minimize the amount of data transferred.
-Use HTTP caching.
+Use HTTP caching.->HTTP caching is a technique used to store frequently accessed web resources (like HTML pages, images, CSS files, and JavaScript files) on a client's computer or a server closer to the user. This reduces the need to fetch these resources from the original server every time, which can significantly improve website performance and reduce network traffic.
 Consider using websockets for real-time updates.
 
 
