@@ -1,0 +1,77 @@
+As a fresher, interviewers will typically ask questions that focus on the fundamentals of React, your understanding of basic concepts, and your ability to apply them in simple scenarios. Here's a tailored list of questions that are more suitable for a fresher, keeping in mind your level of experience:
+
+### **1. Basics of React**
+- What is React, and why do we use it?
+- What is the Virtual DOM, and how does React use it to improve performance?
+- What is JSX? Can you explain its role in React?
+- How do you create a component in React? Can you explain the difference between a functional component and a class component?
+- What are props in React? How do you pass data between components using props?
+- What is state in React, and how is it different from props?
+- How do you update the state of a React component?
+- Explain the concept of unidirectional data flow in React.
+
+### **2. React Hooks**
+- What are React Hooks? Why were they introduced?
+- How do you use the `useState` hook in a functional component?
+- What is the `useEffect` hook, and when do you use it? Can you give an example?
+- What is the purpose of the `useRef` hook? Can you provide a basic use case?
+
+### **3. Component Lifecycle**
+- What are the lifecycle methods in React class components? Can you briefly explain each one?
+- How do functional components handle side effects compared to class components (in terms of lifecycle methods)?
+- What happens during the mounting, updating, and unmounting phases of a component’s lifecycle?
+
+### **4. Handling Events**
+- How do you handle events in React? Can you give an example of handling a button click?
+- How is event handling in React different from standard HTML event handling?
+
+### **5. Forms in React**
+- How do you handle form inputs in React?
+- What is the difference between controlled and uncontrolled components in form handling?
+- How do you handle form validation in React?
+
+### **6. Lists and Keys**
+- How do you render a list of items in React?
+- What is the significance of the `key` prop when rendering lists in React?
+
+### **7. React Router (Basic Navigation)**
+- What is React Router, and why do we use it?
+- How do you implement basic routing in React?
+
+### **8. Conditional Rendering**
+- How do you conditionally render elements in React? Can you provide an example?
+
+### **9. Error Handling**
+- How do you handle errors in React?
+- What are error boundaries in React? Are they available in functional components?
+
+### **10. Performance Optimization (Basic)**
+- What is `React.memo`, and when would you use it?
+- How do you optimize performance in a React application?
+
+### **11. State Management (Basic)**
+- How do you manage state in React without using external libraries?
+- What is Context API in React, and how does it help manage state?
+
+### **12. Styling in React**
+- How do you apply styles to a React component?
+- What are the different ways to style React components (CSS, inline styles, CSS-in-JS, styled-components)?
+
+### **13. Testing Basics (Optional for Freshers)**
+- Have you ever written tests for a React component? What testing libraries can you use for testing React?
+
+### **14. React with Backend (Optional for Freshers)**
+- How do you fetch data from a backend API in React?
+- Can you briefly explain how you would handle loading and error states when fetching data?
+
+---
+
+### **Project-based or Practical Questions**
+- Have you worked on any React projects? Can you explain one of them?
+- How did you manage state and props in your project?
+- Did you face any challenges while building the project? How did you overcome them?
+- Can you explain how you handled routing in your project (if applicable)?
+  
+---
+
+These questions are aimed at testing your understanding of React's basic principles and your ability to apply them. As a fresher, focus on explaining your thought process and showing that you understand the core concepts, even if you haven’t worked on advanced topics yet.

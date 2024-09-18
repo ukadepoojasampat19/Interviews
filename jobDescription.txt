@@ -178,6 +178,28 @@ both interfaces and abstract classes are powerful tools for creating reusable an
 
   * How do you handle asynchronous operations in JavaScript (callbacks, Promises, async/await)?
   ->
+  async fetchapi(url)  // this is an asyncronoue function which will not affect the main thread of the program and executes itas task with other syncronous operation currently.
+  {
+     try
+     {
+        const response = await fetch("url"); // this await will pause the current execution by eneteerig it in to the event queue once the data is fetch from the url then it remove from queuen and event loop will execute the task and then the below code will execute.
+        const data = await response.json();
+     }
+     catch(error)   // if error occur it get handel by catch 
+     {
+       console.log(error);
+     }
+      
+  }
+
+  fetchapi("http://example.com")  //async function will return the promise : means and object which tells us the the completion or failure of the asynchronous functions.
+  .then(data =>{   // if the promise is true then the evenet loop will execute the callback funtion means the work which should be done when the promise is true.
+    console.log(data);
+  })
+  catch(error)
+  {
+    console.log(error);
+  }
 
 **Frontend Development (React/React Native):**
 
