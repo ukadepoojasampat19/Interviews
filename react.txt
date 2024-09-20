@@ -1,7 +1,51 @@
 As a fresher, interviewers will typically ask questions that focus on the fundamentals of React, your understanding of basic concepts, and your ability to apply them in simple scenarios. Here's a tailored list of questions that are more suitable for a fresher, keeping in mind your level of experience:
-
+***********************************************************************************************************
 ### **1. Basics of React**
 - What is React, and why do we use it?
+->react is popular javascript libraray
+features :
+1)component based archtecture(reusable components)
+2)Virtual DOM :copy of the original dom which has same tree structor as the original dom is called virtual dom that react updated directly . when ever first time the application is completed react virtual dom get created and if there is change in the state, props and context at that time the virtual dom reconstruct and compate with the real dom and the real dom get updated.
+3)single page application
+4)flexibility
+
+*********************************************************************************************************************
+STATES :
+***************************************************************************************************************
+
+
+
+
+***************************************************************************************************************
+
+//follwing execution of the code with using async await.
+const dt = async () =>
+{
+    console.log("fetching"); first execute 
+    const res = await fetch("http://example.com");
+    console.log(res);  // third ex ecute
+}
+dt();
+console.log("data fectched succesfully"); //second execute
+***execution**
+1)fetching 2)data fetched succesfully 3)data(print hoil)
+
+//without using async await
+const dt = () => 
+{
+    console.log("fetching");
+    const res = fetch("http://example.com");
+    console.log(res);
+
+}
+dt();
+console.log("fetched succesfully");
+***execution***
+1)fetching 2)promise (pending) 3)fetched succesfully
+
+
+
+
 - What is the Virtual DOM, and how does React use it to improve performance?
 - What is JSX? Can you explain its role in React?
 - How do you create a component in React? Can you explain the difference between a functional component and a class component?
