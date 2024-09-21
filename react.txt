@@ -17,14 +17,19 @@ state is object where we store the property of the components
 states always present in the components.
 eg:
 
+//beloww is my car components
 import { useState} from "react";
-const car = () =>
+const car = ({deafultName, color}) =>  // direct write in function componnets  
 {
-    const [carName,setCarName] = useState("");
+    //destructoring of the props
+    //another way to destructoring of the prop is to diretcly write in the function componenst like above
+    const {deafultName, color}  =  props
+    const [carName,setCarName] = useState(defaultName);
     return
     {
         <input type ="text" placeholder" enter the car name" onchange=(e) =>{e.target.value }/>
         <p> I am in car {carname}</p>
+        <p> color of the car {color} </p>
     }
 }
 ***********************************************************************
@@ -32,7 +37,17 @@ props
 ***********************************************************************\
  props means which are passed to the componenst externally which makes 
 
+import Car from "./location"
+const App =() =>
+{
+    return{
+        <Car name="marauti" color="red" defaultName ="xyz"/>
+    }
+}
 
+diffreneces :
+1) state inside the componenst and props are outside the components
+2) states can be modified inside the componenets but props cannot modified insude the componets 
 ***************************************************************************************************************
 
 //follwing execution of the code with using async await.
