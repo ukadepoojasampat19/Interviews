@@ -9,11 +9,28 @@ features :
 3)single page application
 4)flexibility
 
+-difference between states and props 
 *********************************************************************************************************************
 STATES :
 ***************************************************************************************************************
+state is object where we store the property of the components
+states always present in the components.
+eg:
 
-
+import { useState} from "react";
+const car = () =>
+{
+    const [carName,setCarName] = useState("");
+    return
+    {
+        <input type ="text" placeholder" enter the car name" onchange=(e) =>{e.target.value }/>
+        <p> I am in car {carname}</p>
+    }
+}
+***********************************************************************
+props
+***********************************************************************\
+ props means which are passed to the componenst externally which makes 
 
 
 ***************************************************************************************************************
