@@ -294,7 +294,7 @@ export const BioProvider = ({children}) => // {} means destructoring the value
 {
     const myname  ="pooja";
     const age ="21";
-   return <BioProvider.Provider value = {{myname,age}}>
+   return <BioProvider.Provider value = {{myname,age}}> // data is more than 1 then passed it in curlu braces 1 curly brace asa normal javascript and second for passing the object 
    
      {children}
     </BioProvider.Provider>;
@@ -308,12 +308,49 @@ export const BioProvider = ({children}) => // {} means destructoring the value
 
 ### **3. Component Lifecycle**
 - What are the lifecycle methods in React class components? Can you briefly explain each one?
+->React class components have several lifecycle methods that allow you to hook into different stages of a component's life. These methods are divided into three phases:
+ Mounting : This phase covers when a component is being inserted into the DOM for the first time
+Updating : This phase is triggered when a component’s state or props change, causing a re-render.
+Unmounting :This phase occurs when the component is being removed from the DOM.
+
+
 - How do functional components handle side effects compared to class components (in terms of lifecycle methods)?
+->In React, functional components handle side effects using the useEffect Hook, while class components manage side effects through lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount
+
+
 - What happens during the mounting, updating, and unmounting phases of a component’s lifecycle?
+-> first phase is initilaiziling : means just create the components.
+2)mounting : if any componenets is visisble on screen is called mounting.
+3)updating : changing states , props etc.
+4)unmounting : when the componeents is invisisble it is called unmounting.
 
 ### **4. Handling Events**
 - How do you handle events in React? Can you give an example of handling a button click?
+->In React, handling events is similar to handling events in regular HTML, but with some differences:
+
+Event names are written in camelCase (e.g., onClick instead of onclick).
+Event handlers are passed as functions, not as strings (e.g., {handleClick} instead of "handleClick()").
+eg : <button onClick={handleClick}>Click me</button>
+we can useState hook to update the value which has two parameter first one hich hold current value and second which sets value.
+
 - How is event handling in React different from standard HTML event handling?
+->
+Aspect	                                  React	                                                   HTML
+Event Naming	                    CamelCase (onClick)	                                 Lowercase (onclick)
+Event Handler Syntax	            Pass function reference ({handleClick})	             Use string ("handleClick()")
+Event Object	                    SyntheticEvent  (cross-browser)	                     Native DOM Event (browser-specific)
+Event Delegation	                Handled by React automatically	                     Attached to each DOM element
+Binding this (class)	            Manual binding required	                             Automatically bound to element
+Preventing Default	              event.preventDefault() (synthetic)	                 event.preventDefault()
+Event Propagation	                event.stopPropagation() (synthetic)	                 event.stopPropagation()
+
+
+- why we use react intead of html?
+->HTML is still an essential part of web development, but developers prefer using React (and similar JavaScript frameworks) for several key reasons. While plain HTML is great for static websites, React provides many features that make building dynamic, interactive, and scalable web applications easier.
+****Key Points:
+**No Database: This page doesn't connect to a database. All the text is "hardcoded."
+**No User Interaction: If someone wanted to add a comment or submit information, they couldn't do it on this static site.
+**Simple and Fast: Since there’s no processing or data fetching, this website loads very fast.
 
 ### **5. Forms in React**
 - How do you handle form inputs in React?
