@@ -183,14 +183,126 @@ This allowed functional components to replace class components in almost every s
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 - What are props in React? How do you pass data between components using props?
-
+-> which are passed externally to the components which cannot change in the componenets
+  Props are read-only, meaning the child component should not modify them.
+  Props help in making components reusable by passing different data for different use cases.
+  Data flow in React via props is unidirectional, always from parent to child.
+---------------------------------------------------------------------------------------------------------------
 - What is state in React, and how is it different from props?
-- How do you update the state of a React component?
+->state is object where we store the property of the components and props which are passed to the componenets externally
+-------------------------------------------------------------------------------------------------------------
+-How do you update the state of a React component?
+->In functional componenets we have useState hook which has state varial and state function to update the state.
 - Explain the concept of unidirectional data flow in React.
-
+---------------------------------------------------------------------------------------------------------------
 ### **2. React Hooks**
 - What are React Hooks? Why were they introduced?
-- How do you use the `useState` hook in a functional component?
+->Hooks eliminate the need for class components by bringing state and lifecycle features to functional components. This simplifies the component structure and reduces the need to understand this or lifecycle methods.
+---------------------------------------------------------------------------------------------------------------
+-explain react componenet lifecycle?
+->basisacily involves different stages.
+1)intialization : intializa the componenets.
+2)mounting : if any componenet is visible on screen is called mounting.
+3)updation: whenever there is change in state.
+4)unmounting : whenevr the component became invisisble from the screen means it is unmount.
+
+**************************************************************************************************************
+USEEFFECT :
+
+To connect your component to some external system, call useEffect at the top level of your component:
+Some components need to stay connected to the network, some browser API, or a third-party library, while they are displayed on the page. These systems aren’t controlled by React, so they are called external
+
+it const consist two thing first setup code which actually runs which has cleanup function (return() function which will run when the componenst is re-render means when ever you try to chnage the state)
+second one is the dependency: means [] : empty means it will run when the componnet is mounted, [counter] : is some value is added it means whenevr the value get chnage the first the clenaup code will run then the change code will run. you can passed as much as values in dependcies array ,if any of the value chnages it will re-render and mounted again
+
+IMP POINTS:
+React calls your setup and cleanup functions whenever it’s necessary, which may happen multiple times:
+
+Your setup code runs when your component is added to the page (mounts).
+-After every re-render of your component where the dependencies have changed:
+-First, your cleanup code runs with the old props and state.
+-Then, your setup code runs with the new props and state.
+-Your cleanup code runs one final time after your component is removed from the page (unmounts).
+***************************************************************************************************************
+usage :
+useEffect(setup, dependencies?)
+Reference
+useEffect(setup, dependencies?)
+Usage
+Connecting to an external system
+Wrapping Effects in custom Hooks
+Controlling a non-React widget
+Fetching data with Effects
+Specifying reactive dependencies
+Updating state based on previous state from an Effect
+Removing unnecessary object dependencies
+Removing unnecessary function dependencies
+Reading the latest props and state from an Effect
+Displaying different content on the server and the client
+Troubleshooting
+My Effect runs twice when the component mounts
+My Effect runs after every re-render
+My Effect keeps re-running in an infinite cycle
+My cleanup logic runs even though my component didn’t unmount
+My Effect does something visual, and I see a flicker before it runs
+
+if we have to perform any task inbetween componnets based lifecycle we used useEffect hook
+---------------------------------------------------------------------------------------------------------------
+USECONTEXT:
+
+-problem with prop drilling.
+
+defination : A way to pass data through the componenets tree without having to pass props down manually at every level.
+
+
+createContext : create a contet object.
+provider : a components that provides the context value to its children .
+useContetx(consumer) : A hook that allow you to consume a context.
+**********************************************************
+first file . App
+import Home from './xyz'
+import { BioProvider} from "./"
+export const Home = () =>
+{
+    return (
+      <BioProvider>
+      <Home/>
+      </BioProvider>
+    )
+    
+}
+**********************************************************
+second file. Home
+import {useContext} from "react";
+import {BioContext} from "./";
+
+export const Home =() =>
+{
+    const {myName, Age} = useContext(BioContext);
+    return (
+        <h1> hey how are you {myname} age is {Age} </h1> 
+    )
+}
+**********************************************************
+//third file (index.js)(context is define)
+import {useContext} from "react";
+
+export const BioContext = createContext();  // BioContext will act as whole components;
+
+//2nd setup
+export const BioProvider = ({children}) => // {} means destructoring the value
+{
+    const myname  ="pooja";
+    const age ="21";
+   return <BioProvider.Provider value = {{myname,age}}>
+   
+     {children}
+    </BioProvider.Provider>;
+}
+*************************************************************
+----------------------------------------------------------------------------------------------------------------
+
+
 - What is the `useEffect` hook, and when do you use it? Can you give an example?
 - What is the purpose of the `useRef` hook? Can you provide a basic use case?
 
